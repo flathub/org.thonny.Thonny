@@ -3,6 +3,8 @@ id: org.thonny.Thonny
 runtime: org.freedesktop.Sdk
 runtime-version: "21.08"
 sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.rust-stable
 command: thonny
 cleanup:
   - /man
@@ -222,6 +224,49 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/49/2c/d990b8d5a7378dde856f5a82e36ed9d6061b5f2d00f39dc4317acd9538b4/Send2Trash-1.8.0.tar.gz
         sha256: d2c24762fd3759860a0aff155e45871447ea58d2be6bdd39b5c8f966a0c99c2d
+  
+  # Required to build the Python cryptography library which uses Rust extensions.
+  - name: python3-setuptools_rust
+    buildsystem: simple
+    build-commands:
+    - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+      --prefix=${FLATPAK_DEST} "setuptools_rust" --no-build-isolation
+    sources:
+    - type: file
+      url: https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz
+      sha256: b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f
+    - type: file
+      url: https://files.pythonhosted.org/packages/d4/52/3be868c7ed1f408cb822bc92ce17ffe4e97d11c42caafce0589f05844dd0/semantic_version-2.8.5.tar.gz
+      sha256: d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54
+    - type: file
+      url: https://files.pythonhosted.org/packages/12/22/6ba3031e7cbd6eb002e13ffc7397e136df95813b6a2bd71ece52a8f89613/setuptools-rust-0.12.1.tar.gz
+      sha256: 647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e
+
+  - name: python3-cryptography
+    buildsystem: simple
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/python3-cryptography/cargo
+        CARGO_NET_OFFLINE: "true"
+        RUST_BACKTRACE: "1"
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation --no-binary cryptography 
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz
+        sha256: 2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0
+      - type: file
+        url: https://files.pythonhosted.org/packages/2e/92/87bb61538d7e60da8a7ec247dc048f7671afe17016cd0008b3b710012804/cffi-1.14.6.tar.gz
+        sha256: c9a875ce9d7fe32887784274dd533c57909b7b1dcadcc128a2ac21331a9765dd
+      - type: file
+        url: https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz
+        sha256: 94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
+        x-checker-data:
+          type: pypi
+          name: cryptography
+      - cargo-sources.json
 
   # Regular Bundle Packages
   - name: python3-esptool
@@ -245,23 +290,6 @@ modules:
       - type: file
         url: https://files.pythonhosted.org/packages/9c/c8/28f21b3d3b5e1f1d249be52cdd91793c8c3f7c4f4f255ece7d50984fb05d/esptool-3.1.tar.gz
         sha256: ec6b943c53b4d71f87f98776333d5b4b99905766898a7002c28a9090b92b2de4
-    modules:
-      # Install an older version of the cryptography module until we have time to figure out how to package the newer versions that use Rust here.
-      - name: python3-cryptography
-        buildsystem: simple
-        build-commands:
-          - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-            --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation
-        sources:
-          - type: file
-            url: https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz
-            sha256: 2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0
-          - type: file
-            url: https://files.pythonhosted.org/packages/2e/92/87bb61538d7e60da8a7ec247dc048f7671afe17016cd0008b3b710012804/cffi-1.14.6.tar.gz
-            sha256: c9a875ce9d7fe32887784274dd533c57909b7b1dcadcc128a2ac21331a9765dd
-          - type: file
-            url: https://files.pythonhosted.org/packages/b7/82/f7a4ddc1af185936c1e4fa000942ffa8fb2d98cff26b75afa7b3c63391c4/cryptography-3.3.1.tar.gz
-            sha256: 7e177e4bea2de937a584b13645cab32f25e3d96fc0bc4a4cf99c27dc77682be6
   - name: python3-paramiko
     buildsystem: simple
     build-commands:
