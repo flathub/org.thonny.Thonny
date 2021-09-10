@@ -47,9 +47,11 @@ The Python dependencies for the Flatpak are generated with the help of the [Flat
 This tool produces `json` files for Python packages to be included in the Flatpak manifest's `modules` section.
 In order to update or add dependencies in the Flatpak, these dependencies can be generated using the following instructions.
 
+    sudo apt -y install jq
+
 First, install the Python dependency `requirements-parser`.
 
-    python3 -m pip install aiohttp requirements-parser toml
+    python3 -m pip install aiohttp requirements-parser toml yq
 
 Install the FreeDesktop SDK and Platform.
 
@@ -60,12 +62,16 @@ Clone the `flatpak-builder-tools` repository.
     git clone https://github.com/flatpak/flatpak-builder-tools.git
 
 Now run the Flatpak Pip Generator script for the necessary packages.
+It's probably best to do this for individual dependencies as they are added upstream, but it can be done for all of them at once as shown here.
 The necessary packages are listed in the files `packaging/requirements-regular-bundle.txt` in Thonny's repository.
 The following command shows how to retrieve packages from Thonny's `requirements.txt` file by producing a `python3-requirements-bundle.json` file.
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
-    wget -L https://raw.githubusercontent.com/thonny/thonny/master/packaging/requirements-regular-bundle.txt
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r requirements-regular-bundle.txt
+    git clone https://github.com/thonny/thonny.git
+    thonny_commit = $(yq -r '.modules | map(select(.name == "thonny"))[0].sources[0].commit' org.thonny.Thonny.yaml)
+    git -C thonny checkout "$thonny_commit"
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules.json
+
 
 If you have `org.freedesktop.Sdk//21.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
 The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
@@ -78,7 +84,8 @@ The instructions here describe how to do just this.
 
 First, clone the cryptography library, checking out the particular version to built as part of the Flatpak.
 
-    git clone https://github.com/pyca/cryptography.git --branch 3.4.8
+    git clone https://github.com/pyca/cryptography.git
+    git -C cryptography checkout <insert commit here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
