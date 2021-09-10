@@ -23,7 +23,7 @@ Install the Thonny Flatpak.
 Get the source code.
 
     git clone https://github.com/flathub/org.thonny.Thonny.git
-    cd org.thonny.Thonny/packaging/linux
+    cd org.thonny.Thonny
 
 Add the Flathub repository.
 
@@ -49,20 +49,39 @@ In order to update or add dependencies in the Flatpak, these dependencies can be
 
 First, install the Python dependency `requirements-parser`.
 
-    python3 -m pip install requirements-parser
+    python3 -m pip install aiohttp requirements-parser toml
 
 Install the FreeDesktop SDK and Platform.
 
     flatpak install --user flathub org.freedesktop.Sdk//21.08
+
+Clone the `flatpak-builder-tools` repository.
+
+    git clone https://github.com/flatpak/flatpak-builder-tools.git
 
 Now run the Flatpak Pip Generator script for the necessary packages.
 The necessary packages are listed in the files `packaging/requirements-regular-bundle.txt` in Thonny's repository.
 The following command shows how to retrieve packages from Thonny's `requirements.txt` file by producing a `python3-requirements-bundle.json` file.
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
-    wget -L https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/pip/flatpak-pip-generator
     wget -L https://raw.githubusercontent.com/thonny/thonny/master/packaging/requirements-regular-bundle.txt
-    python3 flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r requirements-regular-bundle.txt
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r requirements-regular-bundle.txt
 
 If you have `org.freedesktop.Sdk//21.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
 The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
+
+#### cryptography
+
+The Python cryptography library requires a bit of extra work to update because it uses Rust modules.
+Whenever updating the cryptography library, its Rust dependencies may also need to be updated.
+The instructions here describe how to do just this.
+
+First, clone the cryptography library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/pyca/cryptography.git --branch 3.4.8
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py cryptography/src/rust/Cargo.lock -o cargo-sources.json
+
+This generates a `cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building cryptography.
