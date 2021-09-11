@@ -1,7 +1,6 @@
----
 id: org.thonny.Thonny
 runtime: org.freedesktop.Sdk
-runtime-version: "21.08"
+runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -126,8 +125,8 @@ modules:
           type: pypi
           name: packaging
       - type: file
-        url: https://files.pythonhosted.org/packages/4e/62/056c0127bf45c493168167aed15c4ccb70d2c69154fb1f4acaffc2bab761/setuptools_scm-6.3.1.tar.gz
-        sha256: 0f6a263912b13798c028b9a271d91af3bde0e42784091c797deccc3ad3a7f596
+        url: https://files.pythonhosted.org/packages/4b/0d/ecb9595fae02467edba5023eb8a23c688d2b438a6a8d1a9e2b8649faf23d/setuptools_scm-6.3.2.tar.gz
+        sha256: a49aa8081eeb3514eb9728fa5040f2eaa962d6c6f4ec9c32f6c1fba88f88a0f2
         x-checker-data:
           type: pypi
           name: setuptools_scm
@@ -171,12 +170,12 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: "true"
-        RUST_BACKTRACE: "1"
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
     buildsystem: simple
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation --no-binary cryptography 
+        --prefix=${FLATPAK_DEST} "cryptography" --no-build-isolation --no-binary cryptography
     sources:
       - type: file
         url: https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz
@@ -267,8 +266,8 @@ modules:
         --prefix=${FLATPAK_DEST} "websockets==9.1.*" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/0d/bd/5262054455ab2067e51de331bfbc53a1dfa9071af7c424cf7c0793c4349a/websockets-9.1.tar.gz
-        sha256: 276d2339ebf0df4f45df453923ebd2270b87900eda5dfd4a6b0cfa15f82111c3
+        url: https://files.pythonhosted.org/packages/1c/f4/61aee1eb4baadf8477fb7f3bc6b04a50fe683ef8ad2f60282806821e4b3b/websockets-10.0.tar.gz
+        sha256: c4fc9a1d242317892590abe5b61a9127f1a61740477bfb121743f290b8054002
         x-checker-data:
           type: pypi
           name: websockets
@@ -396,7 +395,8 @@ modules:
   - name: python3-paramiko
     buildsystem: simple
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "paramiko==2.7.*" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "paramiko==2.7.*" --no-build-isolation
     sources:
       - type: file
         url: https://files.pythonhosted.org/packages/cf/5a/25aeb636baeceab15c8e57e66b8aa930c011ec1c035f284170cacb05025e/PyNaCl-1.4.0.tar.gz
@@ -426,7 +426,9 @@ modules:
       - install -Dm644 packaging/linux/org.thonny.Thonny.desktop -t ${FLATPAK_DEST}/share/applications
       - sed -i 's/Icon=thonny/Icon=org.thonny.Thonny/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - sed -i 's|Exec=/usr/bin/thonny|Exec=thonny|g' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - for size in 16x16 22x22 32x32 48x48 64x64 128x128 192x192 256x256; do install -Dm644 -T packaging/icons/thonny-$size.png ${FLATPAK_DEST}/share/icons/hicolor/$size/apps/${FLATPAK_ID}.png; done
+      - for size in 16x16 22x22 32x32 48x48 64x64 128x128 192x192 256x256; do install
+        -Dm644 -T packaging/icons/thonny-$size.png ${FLATPAK_DEST}/share/icons/hicolor/$size/apps/${FLATPAK_ID}.png;
+        done
       - install -Dm644 packaging/linux/org.thonny.Thonny.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
       - type: git
