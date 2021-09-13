@@ -47,7 +47,7 @@ jobs:
       - name: Checkout the current Thonny version
         run: |
           set -e
-          thonny_commit = $(yq -r '.modules | map(select(.name == "thonny"))[0].sources[0].commit' org.thonny.Thonny.yaml)
+          thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
           git -C thonny switch "$thonny_commit"
 
       - name: Update Python dependencies

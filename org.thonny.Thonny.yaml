@@ -215,14 +215,4 @@ modules:
         done
       - install -Dm644 packaging/linux/org.thonny.Thonny.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
     sources:
-      - type: git
-        url: https://github.com/thonny/thonny.git
-        tag: v3.3.14
-        commit: ab591903b21ca323a486322eec386134477e02fb
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/thonny/thonny/releases/latest
-          tag-query: .tag_name
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
-
+      - thonny-sources.yaml
