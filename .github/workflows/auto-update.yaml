@@ -1,0 +1,64 @@
+name: Auto update
+
+env:
+  BUILDER_TOOLS_URL: https://github.com/flatpak/flatpak-builder-tools.git
+  BUILDER_TOOLS_BRANCH: master
+
+on:
+  schedule:
+    - cron: "45 6 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  update:
+    runs-on: ubuntu-20.04
+    container:
+      image: bilelmoussaoui/flatpak-github-actions:freedesktop-21.08
+      options: --privileged
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo dnf -y install jq python3-requirements-parser
+          pip3 install yq
+
+      - uses: actions/checkout@v2
+
+      - name: Download flatpak-builder-tools
+        run: |
+          git clone -b ${BUILDER_TOOLS_BRANCH} \
+                       ${BUILDER_TOOLS_URL} \
+                       flatpak-builder-tools
+
+      - name: Configure Git user
+        run: |
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config user.name "Workflow trigger"
+
+      - name: Create and switch to working branch
+        run: git switch -c update-python-modules-$(git rev-parse --short HEAD)
+
+      - name: Pull down the Thonny repository
+        uses: actions/checkout@v2
+        with:
+          repository: https://github.com/thonny/thonny.git
+          path: thonny
+
+      - name: Checkout the current Thonny version
+        run: |
+          set -e
+          thonny_commit = $(yq -r '.modules | map(select(.name == "thonny"))[0].sources[0].commit' org.thonny.Thonny.yaml)
+          git -C thonny switch "$thonny_commit"
+
+      - name: Update Python dependencies
+        run: |
+          set -e
+          sdk = $(yq -r .sdk org.thonny.Thonny.yaml)
+          runtime_version = $(yq -r '."runtime-version"' org.thonny.Thonny.yaml)
+          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(sdk)//$(runtime_version) -r thonny/packaging/regular-bundle-requirements.txt -o python3-modules
+          git diff --staged --quiet
+          if test $? -ne 0
+          then
+            git add -- python3-modules.json
+            git commit -m "Update Python dependencies"
+            git push https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}
+          fi
