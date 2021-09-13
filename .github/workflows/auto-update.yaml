@@ -43,9 +43,10 @@ jobs:
         with:
           repository: thonny/thonny
           path: thonny
+          fetch-depth: 0
 
       - name: Checkout the current Thonny version
-        run: git -C thonny checkout --detach "$(yq -r '.[].commit' thonny-sources.yaml)"
+        run: git -C thonny switch -d "$(yq -r '.[].commit' thonny-sources.yaml)"
 
       - name: Update Python dependencies
         run: |
