@@ -51,7 +51,7 @@ jobs:
       - name: Update Python dependencies
         run: |
           set -e
-          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(yq -r .sdk org.thonny.Thonny.yaml)//$(yq -r '."runtime-version"' org.thonny.Thonny.yaml) -r thonny/packaging/regular-bundle-requirements.txt -o python3-modules
+          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(yq -r .sdk org.thonny.Thonny.yaml)//$(yq -r '."runtime-version"' org.thonny.Thonny.yaml) -r thonny/packaging/requirements-regular-bundle.txt -o python3-modules
           git diff --staged --quiet
           if test $? -ne 0
           then
