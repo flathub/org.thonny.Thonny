@@ -9,4 +9,4 @@ flatpak-pip-generator
 *repo*/
 requirements-regular-bundle.txt
 requirements-xxl-bundle.txt
-
+thonny/
