@@ -45,17 +45,12 @@ jobs:
           path: thonny
 
       - name: Checkout the current Thonny version
-        run: |
-          set -e
-          thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
-          git -C thonny switch "$thonny_commit"
+        run: git -C thonny switch "$(yq -r '.[].commit' thonny-sources.yaml)"
 
       - name: Update Python dependencies
         run: |
           set -e
-          sdk = $(yq -r .sdk org.thonny.Thonny.yaml)
-          runtime_version = $(yq -r '."runtime-version"' org.thonny.Thonny.yaml)
-          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(sdk)//$(runtime_version) -r thonny/packaging/regular-bundle-requirements.txt -o python3-modules
+          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(yq -r .sdk org.thonny.Thonny.yaml)//$(yq -r '."runtime-version"' org.thonny.Thonny.yaml) -r thonny/packaging/regular-bundle-requirements.txt -o python3-modules
           git diff --staged --quiet
           if test $? -ne 0
           then
