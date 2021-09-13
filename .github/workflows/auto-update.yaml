@@ -41,7 +41,7 @@ jobs:
       - name: Pull down the Thonny repository
         uses: actions/checkout@v2
         with:
-          repository: https://github.com/thonny/thonny.git
+          repository: thonny/thonny
           path: thonny
 
       - name: Checkout the current Thonny version
