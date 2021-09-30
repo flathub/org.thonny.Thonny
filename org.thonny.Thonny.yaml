@@ -63,7 +63,7 @@ modules:
               stable-only: true
               url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
 
-  # Python denpendenies required to build things
+  # Python dependencies required to build things
   - name: python3-toml
     buildsystem: simple
     build-commands:
