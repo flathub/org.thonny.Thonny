@@ -63,7 +63,7 @@ modules:
               stable-only: true
               url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
 
-  # Python denpendenies required to build things
+  # Python dependencies required to build things
   - name: python3-toml
     buildsystem: simple
     build-commands:
@@ -190,8 +190,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/cc/98/8a258ab4787e6f835d350639792527d2eb7946ff9fc0caca9c3f4cf5dcfe/cryptography-3.4.8.tar.gz
-        sha256: 94cc5ed4ceaefcbe5bf38c8fba6a21fc1d365bb8fb826ea1688e3370b2e24a1c
+        url: https://files.pythonhosted.org/packages/10/91/90b8d4cd611ac2aa526290ae4b4285aa5ea57ee191c63c2f3d04170d7683/cryptography-35.0.0.tar.gz
+        sha256: 9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d
         x-checker-data:
           type: pypi
           name: cryptography
