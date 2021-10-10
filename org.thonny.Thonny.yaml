@@ -1,6 +1,6 @@
 id: org.thonny.Thonny
 runtime: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: "21.08"
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -76,21 +76,37 @@ modules:
         x-checker-data:
           type: pypi
           name: toml
+  # Bootstrap flit_core and tomli due to their circular dependence on each other.
   - name: python3-flit_core
     buildsystem: simple
+    build-options:
+      env:
+        # Ensure the tomli source module can be used at runtime by flit_core to build tomli...
+        PYTHONPATH: /run/build/python3-flit_core/tomli-src
     build-commands:
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
+      # Build and install flit_core first, which doesn't require tomli.
+      - python3 build_dists.py
+      - unzip dist/flit_core-*-py3-none-any.whl -d ${FLATPAK_DEST}/lib/python3.9/site-packages
+      # First, create the wheel metadata for tomli using flit_core.
+      - mkdir tomli-src/tomli-metadata
+      - cd tomli-src && python3 -c 'from flit_core.buildapi import prepare_metadata_for_build_wheel; prepare_metadata_for_build_wheel("tomli-metadata")'
+      # Now create the wheel for tomli using flit_core.
+      - mkdir tomli-src/tomli-wheel
+      - cd tomli-src && python3 -c 'from flit_core.buildapi import build_wheel; build_wheel("tomli-wheel", metadata_directory="tomli-metadata")'
+      # Finally, install the tomli wheel.
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}/tomli-src/tomli-wheel"
+        --prefix=${FLATPAK_DEST} "tomli" --no-build-isolation
     sources:
-      - type: file
+      - type: archive
         url: https://files.pythonhosted.org/packages/2c/a9/64406cf5c1c31186e1208a290ff10a0add43882edaef5eeba49e15ba6e7f/flit_core-3.4.0.tar.gz
         sha256: 29468fa2330969167d1f5c23eb9c0661cb6dacfcd46f361a274609a7f4197530
         x-checker-data:
           type: pypi
           name: flit_core
-      - type: file
-        url: 'https://files.pythonhosted.org/packages/75/50/973397c5ba854445bcc396b593b5db1958da6ab8d665b27397daa1497018/tomli-1.2.1.tar.gz'
+      - type: archive
+        url: https://files.pythonhosted.org/packages/75/50/973397c5ba854445bcc396b593b5db1958da6ab8d665b27397daa1497018/tomli-1.2.1.tar.gz
         sha256: a5b75cb6f3968abb47af1b40c1819dc519ea82bcc065776a866e8d74c5ca9442
+        dest: tomli-src
         x-checker-data:
           type: pypi
           name: tomli
@@ -170,8 +186,8 @@ modules:
       append-path: /usr/lib/sdk/rust-stable/bin
       env:
         CARGO_HOME: /run/build/python3-cryptography/cargo
-        CARGO_NET_OFFLINE: 'true'
-        RUST_BACKTRACE: '1'
+        CARGO_NET_OFFLINE: "true"
+        RUST_BACKTRACE: "1"
     buildsystem: simple
     build-commands:
       - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
