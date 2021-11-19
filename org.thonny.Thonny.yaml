@@ -100,8 +100,8 @@ modules:
         --prefix=${FLATPAK_DEST} "tomli" --no-build-isolation
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/2c/a9/64406cf5c1c31186e1208a290ff10a0add43882edaef5eeba49e15ba6e7f/flit_core-3.4.0.tar.gz
-        sha256: 29468fa2330969167d1f5c23eb9c0661cb6dacfcd46f361a274609a7f4197530
+        url: https://files.pythonhosted.org/packages/26/12/74c9b72b280006a97fb80268e6b84bf77c73837d93391c8238488c6f2dde/flit_core-3.5.0.tar.gz
+        sha256: 2db800d33ff41e4c6e7c1b594666cb2a11553024106655272c7245933b1d75bd
         x-checker-data:
           type: pypi
           name: flit_core
