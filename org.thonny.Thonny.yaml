@@ -168,8 +168,8 @@ modules:
           type: pypi
           name: semantic_version
       - type: file
-        url: https://files.pythonhosted.org/packages/22/fa/ac431f0571bd84d8da5b55d9c9a00d510ae8682324405eabd96a752d090c/setuptools-rust-1.0.0.tar.gz
-        sha256: eb6e6d41f01e63d042288e5c609684adf93426c10ea745ec324263f3fcbf27e9
+        url: https://files.pythonhosted.org/packages/12/22/6ba3031e7cbd6eb002e13ffc7397e136df95813b6a2bd71ece52a8f89613/setuptools-rust-0.12.1.tar.gz
+        sha256: 647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e
         x-checker-data:
           type: pypi
           name: setuptools-rust
@@ -215,8 +215,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/60/06/d9109aba62c0b42466195e5b9b30dded26621a675b73998218070d8cc637/cryptography-36.0.0.tar.gz
-        sha256: 52f769ecb4ef39865719aedc67b4b7eae167bafa48dbc2a26dd36fa56460507f
+        url: https://files.pythonhosted.org/packages/10/91/90b8d4cd611ac2aa526290ae4b4285aa5ea57ee191c63c2f3d04170d7683/cryptography-35.0.0.tar.gz
+        sha256: 9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d
         x-checker-data:
           type: pypi
           name: cryptography
