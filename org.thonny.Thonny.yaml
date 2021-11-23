@@ -156,20 +156,14 @@ modules:
         --prefix=${FLATPAK_DEST} "setuptools_rust" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/17/61/32c3ab8951142e061587d957226b5683d1387fb22d95b4f69186d92616d1/typing_extensions-4.0.0-py3-none-any.whl
-        sha256: 829704698b22e13ec9eaf959122315eabb370b0884400e9818334d8b677023d9
-        x-checker-data:
-          type: pypi
-          name: typing_extensions
-      - type: file
-        url: https://files.pythonhosted.org/packages/a5/15/00ef3b7888a10363b7c402350eda3acf395ff05bebae312d1296e528516a/semantic_version-2.8.5-py2.py3-none-any.whl
-        sha256: 45e4b32ee9d6d70ba5f440ec8cc5221074c7f4b0e8918bdab748cc37912440a9
+        url: https://files.pythonhosted.org/packages/d4/52/3be868c7ed1f408cb822bc92ce17ffe4e97d11c42caafce0589f05844dd0/semantic_version-2.8.5.tar.gz
+        sha256: d2cb2de0558762934679b9a104e82eca7af448c9f4974d1f3eeccff651df8a54
         x-checker-data:
           type: pypi
           name: semantic_version
       - type: file
-        url: https://files.pythonhosted.org/packages/22/fa/ac431f0571bd84d8da5b55d9c9a00d510ae8682324405eabd96a752d090c/setuptools-rust-1.0.0.tar.gz
-        sha256: eb6e6d41f01e63d042288e5c609684adf93426c10ea745ec324263f3fcbf27e9
+        url: https://files.pythonhosted.org/packages/12/22/6ba3031e7cbd6eb002e13ffc7397e136df95813b6a2bd71ece52a8f89613/setuptools-rust-0.12.1.tar.gz
+        sha256: 647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e
         x-checker-data:
           type: pypi
           name: setuptools-rust
@@ -215,8 +209,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/60/06/d9109aba62c0b42466195e5b9b30dded26621a675b73998218070d8cc637/cryptography-36.0.0.tar.gz
-        sha256: 52f769ecb4ef39865719aedc67b4b7eae167bafa48dbc2a26dd36fa56460507f
+        url: https://files.pythonhosted.org/packages/10/91/90b8d4cd611ac2aa526290ae4b4285aa5ea57ee191c63c2f3d04170d7683/cryptography-35.0.0.tar.gz
+        sha256: 9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d
         x-checker-data:
           type: pypi
           name: cryptography
