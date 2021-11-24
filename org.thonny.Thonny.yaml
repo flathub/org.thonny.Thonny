@@ -100,8 +100,8 @@ modules:
         --prefix=${FLATPAK_DEST} "tomli" --no-build-isolation
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/26/12/74c9b72b280006a97fb80268e6b84bf77c73837d93391c8238488c6f2dde/flit_core-3.5.0.tar.gz
-        sha256: 2db800d33ff41e4c6e7c1b594666cb2a11553024106655272c7245933b1d75bd
+        url: https://files.pythonhosted.org/packages/7e/1e/15198966abf00e590ec95fb8aa4ba3d274897fe7b182fce2867f672f6a91/flit_core-3.5.1.tar.gz
+        sha256: 3083720351a6cb00e0634a1ec0e26eae7b273174c3c6c03d5b597a14203b282e
         x-checker-data:
           type: pypi
           name: flit_core
@@ -149,6 +149,19 @@ modules:
         x-checker-data:
           type: pypi
           name: setuptools_scm
+  - name: python3-typing_extensions
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "typing_extensions" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/17/61/32c3ab8951142e061587d957226b5683d1387fb22d95b4f69186d92616d1/typing_extensions-4.0.0-py3-none-any.whl
+        sha256: 829704698b22e13ec9eaf959122315eabb370b0884400e9818334d8b677023d9
+        x-checker-data:
+          type: pypi
+          name: typing_extensions
+          packagetype: bdist_wheel
   - name: python3-setuptools_rust
     buildsystem: simple
     build-commands:
@@ -162,8 +175,8 @@ modules:
           type: pypi
           name: semantic_version
       - type: file
-        url: https://files.pythonhosted.org/packages/12/22/6ba3031e7cbd6eb002e13ffc7397e136df95813b6a2bd71ece52a8f89613/setuptools-rust-0.12.1.tar.gz
-        sha256: 647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e
+        url: https://files.pythonhosted.org/packages/22/fa/ac431f0571bd84d8da5b55d9c9a00d510ae8682324405eabd96a752d090c/setuptools-rust-1.0.0.tar.gz
+        sha256: eb6e6d41f01e63d042288e5c609684adf93426c10ea745ec324263f3fcbf27e9
         x-checker-data:
           type: pypi
           name: setuptools-rust
@@ -209,8 +222,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/10/91/90b8d4cd611ac2aa526290ae4b4285aa5ea57ee191c63c2f3d04170d7683/cryptography-35.0.0.tar.gz
-        sha256: 9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d
+        url: https://files.pythonhosted.org/packages/60/06/d9109aba62c0b42466195e5b9b30dded26621a675b73998218070d8cc637/cryptography-36.0.0.tar.gz
+        sha256: 52f769ecb4ef39865719aedc67b4b7eae167bafa48dbc2a26dd36fa56460507f
         x-checker-data:
           type: pypi
           name: cryptography
