@@ -100,8 +100,8 @@ modules:
         --prefix=${FLATPAK_DEST} "tomli" --no-build-isolation
     sources:
       - type: archive
-        url: https://files.pythonhosted.org/packages/7e/1e/15198966abf00e590ec95fb8aa4ba3d274897fe7b182fce2867f672f6a91/flit_core-3.5.1.tar.gz
-        sha256: 3083720351a6cb00e0634a1ec0e26eae7b273174c3c6c03d5b597a14203b282e
+        url: https://files.pythonhosted.org/packages/08/e9/0653f7783ba2ec2f954f19442878427f1d5bfccb01842d354453c2809b22/flit_core-3.6.0.tar.gz
+        sha256: 5892962ab8b8ea945835b3a288fe9dd69316f1903d5288c3f5cafdcdd04756ad
         x-checker-data:
           type: pypi
           name: flit_core
@@ -144,8 +144,8 @@ modules:
           type: pypi
           name: packaging
       - type: file
-        url: https://files.pythonhosted.org/packages/4b/0d/ecb9595fae02467edba5023eb8a23c688d2b438a6a8d1a9e2b8649faf23d/setuptools_scm-6.3.2.tar.gz
-        sha256: a49aa8081eeb3514eb9728fa5040f2eaa962d6c6f4ec9c32f6c1fba88f88a0f2
+        url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
+        sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
         x-checker-data:
           type: pypi
           name: setuptools_scm
