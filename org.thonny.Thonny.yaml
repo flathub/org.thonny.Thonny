@@ -76,42 +76,18 @@ modules:
         x-checker-data:
           type: pypi
           name: toml
-  # Bootstrap flit_core and tomli due to their circular dependence on each other.
   - name: python3-flit_core
     buildsystem: simple
-    build-options:
-      env:
-        # Ensure the tomli source module can be used at runtime by flit_core to build tomli...
-        PYTHONPATH: /run/build/python3-flit_core/tomli-src
     build-commands:
-      # Build and install flit_core first, which doesn't require tomli.
-      - python3 build_dists.py
-      - unzip dist/flit_core-*-py3-none-any.whl -d ${FLATPAK_DEST}/lib/python3.9/site-packages
-      # First, create the wheel metadata for tomli using flit_core.
-      - mkdir tomli-src/tomli-metadata
-      - cd tomli-src && python3 -c 'from flit_core.buildapi import prepare_metadata_for_build_wheel;
-        prepare_metadata_for_build_wheel("tomli-metadata")'
-      # Now create the wheel for tomli using flit_core.
-      - mkdir tomli-src/tomli-wheel
-      - cd tomli-src && python3 -c 'from flit_core.buildapi import build_wheel; build_wheel("tomli-wheel",
-        metadata_directory="tomli-metadata")'
-      # Finally, install the tomli wheel.
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}/tomli-src/tomli-wheel"
-        --prefix=${FLATPAK_DEST} "tomli" --no-build-isolation
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
     sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/7e/1e/15198966abf00e590ec95fb8aa4ba3d274897fe7b182fce2867f672f6a91/flit_core-3.5.1.tar.gz
-        sha256: 3083720351a6cb00e0634a1ec0e26eae7b273174c3c6c03d5b597a14203b282e
+      - type: file
+        url: https://files.pythonhosted.org/packages/08/e9/0653f7783ba2ec2f954f19442878427f1d5bfccb01842d354453c2809b22/flit_core-3.6.0.tar.gz
+        sha256: 5892962ab8b8ea945835b3a288fe9dd69316f1903d5288c3f5cafdcdd04756ad
         x-checker-data:
           type: pypi
           name: flit_core
-      - type: archive
-        url: https://files.pythonhosted.org/packages/3d/6e/d290c9bf16159f02b70c432386aa5bfe22c2857ff460591912fd907b61f6/tomli-2.0.0.tar.gz
-        sha256: c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
-        dest: tomli-src
-        x-checker-data:
-          type: pypi
-          name: tomli
   - name: python3-poetry-core
     buildsystem: simple
     build-commands:
@@ -144,8 +120,14 @@ modules:
           type: pypi
           name: packaging
       - type: file
-        url: https://files.pythonhosted.org/packages/4b/0d/ecb9595fae02467edba5023eb8a23c688d2b438a6a8d1a9e2b8649faf23d/setuptools_scm-6.3.2.tar.gz
-        sha256: a49aa8081eeb3514eb9728fa5040f2eaa962d6c6f4ec9c32f6c1fba88f88a0f2
+        url: https://files.pythonhosted.org/packages/3d/6e/d290c9bf16159f02b70c432386aa5bfe22c2857ff460591912fd907b61f6/tomli-2.0.0.tar.gz
+        sha256: c292c34f58502a1eb2bbb9f5bbc9a5ebc37bee10ffb8c2d6bbdfa8eb13cc14e1
+        x-checker-data:
+          type: pypi
+          name: tomli
+      - type: file
+        url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
+        sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
         x-checker-data:
           type: pypi
           name: setuptools_scm
