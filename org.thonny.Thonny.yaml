@@ -138,8 +138,8 @@ modules:
         --prefix=${FLATPAK_DEST} "typing_extensions" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/05/e4/baf0031e39cf545f0c9edd5b1a2ea12609b7fcba2d58e118b11753d68cf0/typing_extensions-4.0.1-py3-none-any.whl
-        sha256: 7f001e5ac290a0c0401508864c7ec868be4e701886d5b573a9528ed3973d9d3b
+        url: https://files.pythonhosted.org/packages/6a/1e/df241fd31424de8c834a6c0281652a13a30191bdb10c600c35cef02cd160/typing_extensions-4.1.0-py3-none-any.whl
+        sha256: c13180fbaa7cd97065a4915ceba012bdb31dc34743e63ddee16360161d358414
         x-checker-data:
           type: pypi
           name: typing_extensions
