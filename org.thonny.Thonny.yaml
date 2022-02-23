@@ -83,8 +83,8 @@ modules:
         --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/12/c8/ce203079be7deab7b4cdc1aaf20c95e15c584daec712cb55807e2ef1c7f1/flit_core-3.7.0.tar.gz
-        sha256: c2aa7757bb3e056ecf741427fb8f1f759a180d7235a8c5f9b4aa929f3dd4e327
+        url: https://files.pythonhosted.org/packages/15/d1/d8798b83e953fd6f86ca9b50f93eec464a9305b0661469c8234e61095481/flit_core-3.7.1.tar.gz
+        sha256: 14955af340c43035dbfa96b5ee47407e377ee337f69e70f73064940d27d0a44f
         x-checker-data:
           type: pypi
           name: flit_core
