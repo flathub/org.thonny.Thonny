@@ -169,8 +169,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/pytest-dev/pytest-runner.git
-        tag: v5.3.1
-        commit: 592d891f99371664387e319eb45c3d28ba485afc
+        tag: v5.3.2
+        commit: 3ae5a49054616e2c00a5ddcb26e870a5beababcf
         x-checker-data:
           type: json
           url: https://api.github.com/repos/pytest-dev/pytest-runner/releases/latest
