@@ -64,13 +64,13 @@ Clone the `flatpak-builder-tools` repository.
 Now run the Flatpak Pip Generator script for the necessary packages.
 It's probably best to do this for individual dependencies as they are added upstream, but it can be done for all of them at once as shown here.
 The necessary packages are listed in the files `packaging/requirements-regular-bundle.txt` in Thonny's repository.
-The following command shows how to retrieve packages from Thonny's `requirements.txt` file by producing a `python3-requirements-bundle.json` file.
+The following command shows how to retrieve packages from Thonny's `requirements.txt` file by producing a `bundled-python-modules.json` file.
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
     git clone https://github.com/thonny/thonny.git
     thonny_commit = $(yq -r '.modules | map(select(.name == "thonny"))[0].sources[0].commit' org.thonny.Thonny.yaml)
     git -C thonny checkout "$thonny_commit"
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules.json
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
 
 
 If you have `org.freedesktop.Sdk//21.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.

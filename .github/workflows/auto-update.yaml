@@ -51,11 +51,11 @@ jobs:
       - name: Update Python dependencies
         run: |
           set -e
-          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(yq -r .sdk org.thonny.Thonny.yaml)//$(yq -r '."runtime-version"' org.thonny.Thonny.yaml) -r thonny/packaging/requirements-regular-bundle.txt -o python3-modules
+          python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime $(yq -r .sdk org.thonny.Thonny.yaml)//$(yq -r '."runtime-version"' org.thonny.Thonny.yaml) -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
           git diff --staged --quiet
           if test $? -ne 0
           then
-            git add -- python3-modules.json
+            git add -- bundled-python-modules.json
             git commit -m "Update Python dependencies"
             git push https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}
           fi
