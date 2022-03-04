@@ -1,11 +1,10 @@
----
-- type: git
-  url: https://github.com/thonny/thonny.git
-  tag: v3.3.14
-  commit: ab591903b21ca323a486322eec386134477e02fb
-  x-checker-data:
-    type: json
-    url: https://api.github.com/repos/thonny/thonny/releases/latest
-    tag-query: .tag_name
-    version-query: .tag_name | sub("^v"; "")
-    timestamp-query: .published_at
+  - type: git
+    url: https://github.com/thonny/thonny.git
+    tag: v3.3.11
+    commit: f5baa395ac3ff54e1ab83774ea1149d185e32ffd
+    x-checker-data:
+      type: json
+      url: https://api.github.com/repos/thonny/thonny/releases/latest
+      tag-query: .tag_name
+      version-query: .tag_name | sub("^v"; "")
+      timestamp-query: .published_at
