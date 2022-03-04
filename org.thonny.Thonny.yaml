@@ -162,21 +162,6 @@ modules:
         x-checker-data:
           type: pypi
           name: setuptools-rust
-  - name: pytest-runner
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST}
-    sources:
-      - type: git
-        url: https://github.com/pytest-dev/pytest-runner.git
-        tag: v6.0.0
-        commit: a3dc9f4c6afea684ed48da998958470ea41f3c00
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/pytest-dev/pytest-runner/releases/latest
-          tag-query: .tag_name
-          version-query: .tag_name | sub("^v"; "")
-          timestamp-query: .published_at
 
   # The cryptography Python library is handled specially since it has Rust code and dependencies.
   - name: python3-cryptography
@@ -213,7 +198,7 @@ modules:
       - cargo-sources.json
 
   # Python dependencies
-  - python3-modules.json
+  - bundled-python-modules.json
 
   - name: thonny
     buildsystem: simple
