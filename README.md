@@ -16,6 +16,19 @@ Install the Thonny Flatpak.
 
     flatpak install flathub org.thonny.Thonny
 
+### Beta
+
+Beta versions of Thonny are made available through the `beta` branch of this repository and the Flathub Beta repository.
+To use the Thonny Flatpak Beta, follow these instructions.
+
+Add the Flathub Beta remote.
+
+    flatpak remote-add --user flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
+
+Install the Thonny Flatpak Beta.
+
+    flatpak install --user flathub-beta org.thonny.Thonny//beta
+
 ## Maintainers
 
 ### Build
