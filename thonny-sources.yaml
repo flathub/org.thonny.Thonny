@@ -6,6 +6,6 @@
   x-checker-data:
     type: json
     url: https://api.github.com/repos/thonny/thonny/releases
-    tag-query: .tag_name
+    tag-query: first | .tag_name
     version-query: .tag_name | sub("^v"; "")
     timestamp-query: .published_at
