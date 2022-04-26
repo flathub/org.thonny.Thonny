@@ -98,6 +98,7 @@ The instructions here describe how to do just this.
 First, clone the cryptography library, checking out the particular version to built as part of the Flatpak.
 
     git clone https://github.com/pyca/cryptography.git
+    git -C cryptography pull
     git -C cryptography checkout <insert commit here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.

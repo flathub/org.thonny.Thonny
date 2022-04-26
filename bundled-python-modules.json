@@ -257,8 +257,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz",
-                    "sha256": "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9",
+                    "url": "https://files.pythonhosted.org/packages/d7/88/067fcf5fd8db191b9e617bcc0effa1caacfc96acca987724535129aff487/cryptography-37.0.0.tar.gz",
+                    "sha256": "5a761fc1ff0eae360a80656bea462c3163dfaa8093b2fa0f72af929217b14a97",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "cryptography"
@@ -318,8 +318,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz",
-                    "sha256": "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9",
+                    "url": "https://files.pythonhosted.org/packages/d7/88/067fcf5fd8db191b9e617bcc0effa1caacfc96acca987724535129aff487/cryptography-37.0.0.tar.gz",
+                    "sha256": "5a761fc1ff0eae360a80656bea462c3163dfaa8093b2fa0f72af929217b14a97",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "cryptography"
