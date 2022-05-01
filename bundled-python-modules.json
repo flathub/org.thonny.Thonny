@@ -346,8 +346,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d8/ba/21c475ead997ee21502d30f76fd93ad8d5858d19a3fad7cd153de698c4dd/bcrypt-3.2.0.tar.gz",
-                    "sha256": "5b93c1726e50a93a033c36e5ca7fdcd29a5c7395af50a6892f5d9e7c6cfbfb29",
+                    "url": "https://files.pythonhosted.org/packages/3d/dc/a2d1751e86f3b57fb665d54113766df5067110c61622758d350f0bbbdbfa/bcrypt-3.2.1.tar.gz",
+                    "sha256": "c563f5be73303d0412367766df3860afff42f1f38583f66a2f32ab9f7966898b",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bcrypt"
