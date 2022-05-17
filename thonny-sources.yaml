@@ -1,8 +1,8 @@
 ---
 - type: git
   url: https://github.com/thonny/thonny.git
-  tag: v4.0.0b2
-  commit: 910757e6e895ec2cfa5de9c63d523f811c6804d8
+  tag: v4.0.0b3
+  commit: c1c4ac05a808641bbb22dd96e6d6487223f00250
   x-checker-data:
     type: json
     url: https://api.github.com/repos/thonny/thonny/releases
