@@ -107,30 +107,40 @@ modules:
         --prefix=${FLATPAK_DEST} "setuptools_scm" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz
-        sha256: c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1
-        # The packaging dependency does not support pyparsing 3 yet, so don't update to 3.x.x.
-        # x-checker-data:
-        #   type: pypi
-        #   name: pyparsing
-      - type: file
-        url: https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz
-        sha256: dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb
+        url: https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl
+        sha256: 5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc
         x-checker-data:
+          name: pyparsing
+          packagetype: bdist_wheel
           type: pypi
-          name: packaging
       - type: file
-        url: https://files.pythonhosted.org/packages/c0/3f/d7af728f075fb08564c5949a9c95e44352e23dee646869fa104a3b2060a3/tomli-2.0.1.tar.gz
-        sha256: de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f
+        url: https://files.pythonhosted.org/packages/75/e1/932e06004039dd670c9d5e1df0cd606bf46e29a28e65d5bb28e894ea29c9/typing_extensions-4.2.0-py3-none-any.whl
+        sha256: 6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708
         x-checker-data:
+          name: typing_extensions
+          packagetype: bdist_wheel
           type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl
+        sha256: 939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc
+        x-checker-data:
           name: tomli
-      - type: file
-        url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
-        sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
-        x-checker-data:
+          packagetype: bdist_wheel
           type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl
+        sha256: ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522
+        x-checker-data:
+          name: packaging
+          packagetype: bdist_wheel
+          type: pypi
+      - type: file
+        url: https://files.pythonhosted.org/packages/1a/dd/b83708410d912a56e6aa1f78ac1135465eb6a5cfe494628ae24e7dc5922f/setuptools_scm-7.0.2-py3-none-any.whl
+        sha256: ec120c99027a785c7a349667480a5b2100dfc7d5063e545c93f3735508945aef
+        x-checker-data:
           name: setuptools_scm
+          packagetype: bdist_wheel
+          type: pypi
   - name: python3-typing_extensions
     buildsystem: simple
     build-commands:
