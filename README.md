@@ -85,7 +85,6 @@ I usually convert these to YAML and place them directly in the Flatpak manifest 
     git -C thonny checkout "$thonny_commit"
     python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
 
-
 If you have `org.freedesktop.Sdk//21.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
 The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
 
