@@ -11,7 +11,7 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     container:
       image: bilelmoussaoui/flatpak-github-actions:freedesktop-21.08
       options: --privileged
@@ -22,7 +22,7 @@ jobs:
           python3 -m pip install requirements-parser
           python3 -m pip install yq
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Download flatpak-builder-tools
         run: |
@@ -39,7 +39,7 @@ jobs:
         run: git switch -c update-python-modules-$(git rev-parse --short HEAD)
 
       - name: Pull down the Thonny repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: thonny/thonny
           path: thonny
