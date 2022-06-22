@@ -81,7 +81,7 @@ The following command shows how to retrieve packages from Thonny's `requirements
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
     git clone https://github.com/thonny/thonny.git
-    thonny_commit = $(yq -r '.modules | map(select(.name == "thonny"))[0].sources[0].commit' org.thonny.Thonny.yaml)
+    thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
     git -C thonny checkout "$thonny_commit"
     python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//21.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
 
