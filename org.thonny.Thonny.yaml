@@ -126,8 +126,8 @@ modules:
           type: pypi
           name: tomli
       - type: file
-        url: https://files.pythonhosted.org/packages/4a/18/477d3d9eb2f88230ff2a41de9d8ffa3554b706352787d289f57f76bfba0b/setuptools_scm-6.4.2.tar.gz
-        sha256: 6833ac65c6ed9711a4d5d2266f8024cfa07c533a0e55f4c12f6eff280a5a9e30
+        url: https://files.pythonhosted.org/packages/43/70/aff5e3c2463b08997e21f5f961d6ebfd32ce56d6026394664d6a10090cbb/setuptools_scm-7.0.2.tar.gz
+        sha256: 53afbaa882f43e5ec8e14f2d93b9c268dc62eb3f6cc8b2790f8cb97903e53c02
         x-checker-data:
           type: pypi
           name: setuptools_scm
@@ -189,8 +189,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/67/82/9dd8ef695c7f928b25927e8956f73bdba09a752a51871678f320c498c535/cryptography-37.0.3.tar.gz
-        sha256: ae430d51c67ac638dfbb42edf56c669ca9c74744f4d225ad11c6f3d355858187
+        url: https://files.pythonhosted.org/packages/51/05/bb2b681f6a77276fc423d04187c39dafdb65b799c8d87b62ca82659f9ead/cryptography-37.0.2.tar.gz
+        sha256: f224ad253cc9cea7568f49077007d2263efa57396a2f2f78114066fd54b5c68e
         x-checker-data:
           type: pypi
           name: cryptography
