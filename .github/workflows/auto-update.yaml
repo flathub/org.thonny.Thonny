@@ -16,6 +16,9 @@ jobs:
       image: bilelmoussaoui/flatpak-github-actions:freedesktop-21.08
       options: --privileged
     steps:
+      - name: Configure safe directory for Git
+        run: git config --global --add safe.directory /__w/org.thonny.Thonny/org.thonny.Thonny
+
       - name: Install dependencies
         run: |
           sudo dnf -y install jq python3-pip
@@ -23,17 +26,14 @@ jobs:
           python3 -m pip install yq
 
       - uses: actions/checkout@v3
+        with:
+          set-safe-directory: '/__w/org.thonny.Thonny/org.thonny.Thonny'
 
       - name: Download flatpak-builder-tools
         run: |
           git clone -b ${BUILDER_TOOLS_BRANCH} \
                        ${BUILDER_TOOLS_URL} \
                        flatpak-builder-tools
-
-      - name: Configure Git user
-        run: |
-          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          git config user.name "Workflow trigger"
 
       - name: Create and switch to working branch
         run: git switch -c update-python-modules-$(git rev-parse --short HEAD)
