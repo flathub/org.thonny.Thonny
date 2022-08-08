@@ -205,8 +205,13 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/16/d5/b0ad240c22bba2f4591693b0ca43aae94fbd77fb1e2b107d54fff1462b6f/asttokens-2.0.5-py2.py3-none-any.whl",
-                    "sha256": "0844691e88552595a6f4a4281a9f7f79b8dd45ca4ccea82e5e05b4bbdb76705c"
+                    "url": "https://files.pythonhosted.org/packages/ad/a8/1f7eed0f3f775937025dc3813fa5b8f1e00ddfacc6084bc48debb885ee7b/asttokens-2.0.7-py2.py3-none-any.whl",
+                    "sha256": "f5589ef8518f73dd82c15e1c19f795d8a62c133485e557c04443d4a1a730cf9f",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "asttokens",
+                        "packagetype": "bdist_wheel"
+                    }
                 }
             ]
         },
