@@ -227,10 +227,8 @@ modules:
 
   - name: thonny
     buildsystem: simple
-    ensure-writable:
-      - /lib/python3.9/site-packages/easy-install.pth
     build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST}
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
       - install -Dm644 packaging/linux/org.thonny.Thonny.desktop -t ${FLATPAK_DEST}/share/applications
       - sed -i 's/Icon=thonny/Icon=org.thonny.Thonny/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - sed -i 's|Exec=/usr/bin/thonny|Exec=thonny|g' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
