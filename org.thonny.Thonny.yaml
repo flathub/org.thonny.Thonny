@@ -1,6 +1,6 @@
 id: org.thonny.Thonny
 runtime: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -210,7 +210,7 @@ modules:
   - name: thonny
     buildsystem: simple
     ensure-writable:
-      - /lib/python3.9/site-packages/easy-install.pth
+      - /lib/python3.10/site-packages/easy-install.pth
     build-commands:
       - python3 setup.py install --prefix=${FLATPAK_DEST}
       - install -Dm644 packaging/linux/org.thonny.Thonny.desktop -t ${FLATPAK_DEST}/share/applications
