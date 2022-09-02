@@ -128,8 +128,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e4/3b/f1aa1bd41e8188b3a3605d71b699b73695fc7ac862cbed23ed9dee707251/astroid-2.11.7-py3-none-any.whl",
-                    "sha256": "86b0a340a512c65abf4368b80252754cda17c02cdbbd3f587dddf98112233e7b",
+                    "url": "https://files.pythonhosted.org/packages/41/9d/352415e9ee554f5037aeb97f3ed4a59ea3654648f37b42c23c5f927b3bb4/astroid-2.12.5-py3-none-any.whl",
+                    "sha256": "d612609242996c4365aeb0345e61edba34363eaaba55f1c0addf6a98f073bef6",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "astroid",
@@ -138,8 +138,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/97/40/de480b414d167f52b8c3b362319d757744beb2eac955bfafaf47390a0873/pylint-2.14.5-py3-none-any.whl",
-                    "sha256": "fabe30000de7d07636d2e82c9a518ad5ad7908590fe135ace169b44839c15f90",
+                    "url": "https://files.pythonhosted.org/packages/5e/1b/920b36e0db0fe3d4b583a934e1889153699bcccbca0a41b18202d2d2e1e9/pylint-2.15.0-py3-none-any.whl",
+                    "sha256": "4b124affc198b7f7c9b5f9ab690d85db48282a025ef9333f51d2d7281b92a6c3",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "pylint",
@@ -357,8 +357,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e8/36/edc85ab295ceff724506252b774155eff8a238f13730c8b13badd33ef866/bcrypt-3.2.2.tar.gz",
-                    "sha256": "433c410c2177057705da2a9f2cd01dd157493b2a7ac14c8593a16b3dab6b6bfb",
+                    "url": "https://files.pythonhosted.org/packages/99/f2/b71b9b5b2400fffac7d42c560ac89f302c4d8e328337b2f05f0a4d9e590d/bcrypt-4.0.0.tar.gz",
+                    "sha256": "c59c170fc9225faad04dde1ba61d85b413946e8ce2e5f5f5ff30dfd67283f319",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bcrypt"
