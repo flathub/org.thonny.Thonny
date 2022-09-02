@@ -23,12 +23,7 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/b3/0e/836f12ec50075161e365131f13f5758451645af75c2becf61c6351ecec39/jedi-0.18.1-py2.py3-none-any.whl",
-                    "sha256": "637c9635fcf47945ceb91cd7f320234a7be540ded6f3e99a50cb6febdfd1ba8d",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "jedi",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "637c9635fcf47945ceb91cd7f320234a7be540ded6f3e99a50cb6febdfd1ba8d"
                 }
             ]
         },
@@ -42,12 +37,7 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl",
-                    "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "pyserial",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"
                 }
             ]
         },
@@ -55,13 +45,17 @@
             "name": "python3-pylint",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pylint==2.9.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pylint==2.14.*\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/82/f7/e43cefbe88c5fd371f4cf0cf5eb3feccd07515af9fd6cf7dbf1d1793a797/wrapt-1.12.1.tar.gz",
-                    "sha256": "b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"
+                    "url": "https://files.pythonhosted.org/packages/11/eb/e06e77394d6cf09977d92bff310cb0392930c08a338f99af6066a5a98f92/wrapt-1.14.1.tar.gz",
+                    "sha256": "380a85cf89e0e69b7cfbe2ea9f765f004ff419f34194018a6827ac0e3edfed4d",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "wrapt"
+                    }
                 },
                 {
                     "type": "file",
@@ -74,18 +68,43 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl",
-                    "sha256": "806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b",
+                    "url": "https://files.pythonhosted.org/packages/18/31/2a87f292f752d39c6c207f9e44137e3e1d4250da880a9fbc0bbf630138e0/tomlkit-0.11.4-py3-none-any.whl",
+                    "sha256": "25d4e2e446c453be6360c67ddfb88838cfc42026322770ba13d1fbd403a93a5c",
                     "x-checker-data": {
                         "type": "pypi",
-                        "name": "toml",
+                        "name": "tomlkit",
                         "packagetype": "bdist_wheel"
                     }
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/87/89/479dc97e18549e21354893e4ee4ef36db1d237534982482c3681ee6e7b57/mccabe-0.6.1-py2.py3-none-any.whl",
-                    "sha256": "ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"
+                    "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
+                    "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "tomli",
+                        "packagetype": "bdist_wheel"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/ed/22/967181c94c3a4063fe64e15331b4cb366bdd7dfbf46fcb8ad89650026fec/platformdirs-2.5.2-py3-none-any.whl",
+                    "sha256": "027d8e83a2d7de06bbac4e5ef7e023c02b863d7ea5d079477e722bb41ab25788",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "platformdirs",
+                        "packagetype": "bdist_wheel"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/27/1a/1f68f9ba0c207934b35b86a8ca3aad8395a3d6dd7921c0686e23853ff5a9/mccabe-0.7.0-py2.py3-none-any.whl",
+                    "sha256": "6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "mccabe",
+                        "packagetype": "bdist_wheel"
+                    }
                 },
                 {
                     "type": "file",
@@ -99,13 +118,33 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/14/05/eca5daea3244476f10e750e0cbbc9302f3b29e354daece9659cddb471324/astroid-2.6.6-py3-none-any.whl",
-                    "sha256": "ab7f36e8a78b8e54a62028ba6beef7561db4cdb6f2a5009ecc44a6f42b5697ef"
+                    "url": "https://files.pythonhosted.org/packages/12/ff/3b1a8f5d59600393506c64fa14d13afdfe6fe79ed65a18d64026fe9f8356/dill-0.3.5.1-py2.py3-none-any.whl",
+                    "sha256": "33501d03270bbe410c72639b350e941882a8b0fd55357580fbc873fba0c59302",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "dill",
+                        "packagetype": "bdist_wheel"
+                    }
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b9/27/2aca16def0282964f0f3f09afb7e86b4bfbfa98ecb53025ea92b3d36251e/pylint-2.9.6-py3-none-any.whl",
-                    "sha256": "2e1a0eb2e8ab41d6b5dbada87f066492bb1557b12b76c47c2ee8aa8a11186594"
+                    "url": "https://files.pythonhosted.org/packages/e4/3b/f1aa1bd41e8188b3a3605d71b699b73695fc7ac862cbed23ed9dee707251/astroid-2.11.7-py3-none-any.whl",
+                    "sha256": "86b0a340a512c65abf4368b80252754cda17c02cdbbd3f587dddf98112233e7b",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "astroid",
+                        "packagetype": "bdist_wheel"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/97/40/de480b414d167f52b8c3b362319d757744beb2eac955bfafaf47390a0873/pylint-2.14.5-py3-none-any.whl",
+                    "sha256": "fabe30000de7d07636d2e82c9a518ad5ad7908590fe135ace169b44839c15f90",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "pylint",
+                        "packagetype": "bdist_wheel"
+                    }
                 }
             ]
         },
@@ -113,13 +152,13 @@
             "name": "python3-docutils",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"docutils==0.17.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"docutils==0.19.*\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/4c/5e/6003a0d1f37725ec2ebd4046b657abb9372202655f96e76795dca8c0063c/docutils-0.17.1-py2.py3-none-any.whl",
-                    "sha256": "cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"
+                    "url": "https://files.pythonhosted.org/packages/93/69/e391bd51bc08ed9141ecd899a0ddb61ab6465309f1eb470905c0c8868081/docutils-0.19-py3-none-any.whl",
+                    "sha256": "5e1de4d849fee02c63b040a4a3fd567f4ab104defd8a5511fbbc24a8a017efbc"
                 }
             ]
         },
@@ -127,19 +166,9 @@
             "name": "python3-mypy",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mypy==0.910.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mypy==0.971.*\" --no-build-isolation"
             ],
             "sources": [
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl",
-                    "sha256": "806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "toml",
-                        "packagetype": "bdist_wheel"
-                    }
-                },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/ed/d6/2afc375a8d55b8be879d6b4986d4f69f01115e795e36827fd3a40166028b/typing_extensions-4.3.0-py3-none-any.whl",
@@ -147,6 +176,16 @@
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "typing_extensions",
+                        "packagetype": "bdist_wheel"
+                    }
+                },
+                {
+                    "type": "file",
+                    "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
+                    "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc",
+                    "x-checker-data": {
+                        "type": "pypi",
+                        "name": "tomli",
                         "packagetype": "bdist_wheel"
                     }
                 },
@@ -162,8 +201,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/33/46/b5d01f8844c84772e950bfc6adcaaa94cd22fedeb7c01776fd6effb3c2f6/mypy-0.910.tar.gz",
-                    "sha256": "704098302473cb31a218f1775a873b376b30b4c18229421e9e9dc8916fd16150"
+                    "url": "https://files.pythonhosted.org/packages/5e/66/00f7f751140fe6953603fb0cd56dee0314842cfe358884ca3025589ca81c/mypy-0.971.tar.gz",
+                    "sha256": "40b0f21484238269ae6a57200c807d80debc6459d444c0489a102d7c6a75fa56"
                 }
             ]
         },
@@ -190,13 +229,13 @@
             "name": "python3-Send2Trash",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Send2Trash==1.7.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Send2Trash==1.8.1b0\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/8e/47/782f06786c1ef95fd9b0df6d03b7188c8d29e303e06ffe9d0d4de9824557/Send2Trash-1.7.1-py3-none-any.whl",
-                    "sha256": "c20fee8c09378231b3907df9c215ec9766a84ee20053d99fbad854fe8bd42159"
+                    "url": "https://files.pythonhosted.org/packages/a5/ea/28de7facee89eab9cb228316e17a390792995138642bf6a3be3912b265c4/Send2Trash-1.8.1b0-py3-none-any.whl",
+                    "sha256": "9c9f667f7211232dda8add62116e835304c8015210cbd8612847aaf19875a487"
                 }
             ]
         },
@@ -204,7 +243,7 @@
             "name": "python3-esptool",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"esptool==3.1.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"esptool==4.2.*\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -224,15 +263,6 @@
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "cffi"
-                    }
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz",
-                    "sha256": "b8b25cdc83478ccb06361a0e8fadc27b376a3dfabbb1dc6bb583a998a22c0127",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "reedsolo"
                     }
                 },
                 {
@@ -276,8 +306,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/9c/c8/28f21b3d3b5e1f1d249be52cdd91793c8c3f7c4f4f255ece7d50984fb05d/esptool-3.1.tar.gz",
-                    "sha256": "ec6b943c53b4d71f87f98776333d5b4b99905766898a7002c28a9090b92b2de4"
+                    "url": "https://files.pythonhosted.org/packages/68/a7/40f80078ad06f064ff8fb52d7f2d37f0bcb3f4005fe4fbc6619a47a4990a/esptool-4.2.1.tar.gz",
+                    "sha256": "b967faed94dd43f547953fde362d3ba5b63dddca0a0ff7982750054702cbc238"
                 }
             ]
         },
@@ -285,7 +315,7 @@
             "name": "python3-paramiko",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"paramiko==2.7.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"paramiko==2.11.*\" --no-build-isolation"
             ],
             "sources": [
                 {
@@ -336,8 +366,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/95/19/124e9287b43e6ff3ebb9cdea3e5e8e88475a873c05ccdf8b7e20d2c4201e/paramiko-2.7.2-py2.py3-none-any.whl",
-                    "sha256": "4f3e316fef2ac628b05097a637af35685183111d4bc1b5979bd397c2ab7b5898"
+                    "url": "https://files.pythonhosted.org/packages/04/e5/39ec73dd4a8769d6759b8d6c60a1b2c9337f585407c2ae8bfb8ccb734278/paramiko-2.11.0-py2.py3-none-any.whl",
+                    "sha256": "655f25dc8baf763277b933dfcea101d636581df8d6b9774d1fb653426b72c270"
                 }
             ]
         },
@@ -351,12 +381,7 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/22/a6/858897256d0deac81a172289110f31629fc4cee19b6f01283303e18c8db3/ptyprocess-0.7.0-py2.py3-none-any.whl",
-                    "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "ptyprocess",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"
                 }
             ]
         },
@@ -364,13 +389,13 @@
             "name": "python3-websockets",
             "buildsystem": "simple",
             "build-commands": [
-                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"websockets==9.1.*\" --no-build-isolation"
+                "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"websockets==10.*\" --no-build-isolation"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/0d/bd/5262054455ab2067e51de331bfbc53a1dfa9071af7c424cf7c0793c4349a/websockets-9.1.tar.gz",
-                    "sha256": "276d2339ebf0df4f45df453923ebd2270b87900eda5dfd4a6b0cfa15f82111c3"
+                    "url": "https://files.pythonhosted.org/packages/f8/a3/622d9acbfb9a71144b5d7609906bc648c62e3ca5fdbb1c8cca222949d82c/websockets-10.3.tar.gz",
+                    "sha256": "fc06cc8073c8e87072138ba1e431300e2d408f054b27047d047b549455066ff4"
                 }
             ]
         }

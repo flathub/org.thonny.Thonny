@@ -1,6 +1,6 @@
 id: org.thonny.Thonny
 runtime: org.freedesktop.Sdk
-runtime-version: '21.08'
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
@@ -95,8 +95,8 @@ modules:
         --prefix=${FLATPAK_DEST} "poetry-core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/51/be/c4dce945cf7de2dc38d94cf724525f2a97d83b18403eeeb87eecb715dada/poetry-core-1.0.8.tar.gz
-        sha256: 951fc7c1f8d710a94cb49019ee3742125039fc659675912ea614ac2aa405b118
+        url: https://files.pythonhosted.org/packages/ea/47/929cccb98445b627e3a42f29290b3f6dc6c21f3dc0ba7b3bf16215298f94/poetry-core-1.1.0.tar.gz
+        sha256: d145ae121cf79118a8901b60f2c951c4edcc16f55eb8aaefc156aa33aa921f07
         x-checker-data:
           type: pypi
           name: poetry-core
@@ -167,8 +167,11 @@ modules:
           type: pypi
           name: semantic_version
       - type: file
-        url: https://files.pythonhosted.org/packages/a9/55/5db4a5b137af2afdc23a6e251d5ebb3b4e04c8deb68fbb5ffdacbd134c0c/setuptools-rust-1.3.0.tar.gz
-        sha256: 958c5bf4ab6483d59dab888538121871cc5006354a42fb0fbd50acf03caad1de
+        url: https://files.pythonhosted.org/packages/ed/c6/8effd679eb1cb6d3fd9fc7837cf86c6e4c1ba7a33c3e5e35c741c04016c5/setuptools-rust-1.4.1.tar.gz
+        sha256: 18ff850831f58ee21d5783825c99fad632da21e47645e9427fd7dec048029e76
+        x-checker-data:
+          type: pypi
+          name: setuptools-rust
 
   # The cryptography Python library is handled specially since it has Rust code and dependencies.
   - name: python3-cryptography
@@ -204,15 +207,28 @@ modules:
       # The Cargo sources should be updated whenever cryptography is updated.
       - cargo-sources.json
 
+  # As of Python 3.10, the native C code compiled as part of the reedsolo package no longer builds.
+  # Disable building the native code to avoid a build failure.
+  - name: python3-reedsolo
+    buildsystem: simple
+    build-commands:
+      - pip3 install --install-option="--nocython" --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "reedsolo" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz
+        sha256: b8b25cdc83478ccb06361a0e8fadc27b376a3dfabbb1dc6bb583a998a22c0127
+        x-checker-data:
+          name: reedsolo
+          type: pypi
+
   # Python dependencies
   - bundled-python-modules.json
 
   - name: thonny
     buildsystem: simple
-    ensure-writable:
-      - /lib/python3.9/site-packages/easy-install.pth
     build-commands:
-      - python3 setup.py install --prefix=${FLATPAK_DEST}
+      - python3 setup.py install --prefix=${FLATPAK_DEST} --root=/
       - install -Dm644 packaging/linux/org.thonny.Thonny.desktop -t ${FLATPAK_DEST}/share/applications
       - sed -i 's/Icon=thonny/Icon=org.thonny.Thonny/' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - sed -i 's|Exec=/usr/bin/thonny|Exec=thonny|g' ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
