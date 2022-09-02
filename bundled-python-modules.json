@@ -129,22 +129,12 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/e4/3b/f1aa1bd41e8188b3a3605d71b699b73695fc7ac862cbed23ed9dee707251/astroid-2.11.7-py3-none-any.whl",
-                    "sha256": "86b0a340a512c65abf4368b80252754cda17c02cdbbd3f587dddf98112233e7b",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "astroid",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "86b0a340a512c65abf4368b80252754cda17c02cdbbd3f587dddf98112233e7b"
                 },
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/97/40/de480b414d167f52b8c3b362319d757744beb2eac955bfafaf47390a0873/pylint-2.14.5-py3-none-any.whl",
-                    "sha256": "fabe30000de7d07636d2e82c9a518ad5ad7908590fe135ace169b44839c15f90",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "pylint",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "fabe30000de7d07636d2e82c9a518ad5ad7908590fe135ace169b44839c15f90"
                 }
             ]
         },
@@ -287,15 +277,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/89/d9/5fcd312d5cce0b4d7ee8b551a0ea99e4ea9db0fdbf6dd455a19042e3370b/cryptography-37.0.4.tar.gz",
-                    "sha256": "63f9c17c0e2474ccbebc9302ce2f07b55b3b3fcb211ded18a42d5764f5c10a82",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "cryptography"
-                    }
-                },
-                {
-                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/49/fa/ac153ef3c9668a093f33386edf7a20122962e9142b1105fbe2a4a4262785/bitstring-3.1.9-py3-none-any.whl",
                     "sha256": "0de167daa6a00c9386255a7cac931b45e6e24e0ad7ea64f1f92a64ac23ad4578",
                     "x-checker-data": {
@@ -344,24 +325,6 @@
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "PyNaCl"
-                    }
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/89/d9/5fcd312d5cce0b4d7ee8b551a0ea99e4ea9db0fdbf6dd455a19042e3370b/cryptography-37.0.4.tar.gz",
-                    "sha256": "63f9c17c0e2474ccbebc9302ce2f07b55b3b3fcb211ded18a42d5764f5c10a82",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "cryptography"
-                    }
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/e8/36/edc85ab295ceff724506252b774155eff8a238f13730c8b13badd33ef866/bcrypt-3.2.2.tar.gz",
-                    "sha256": "433c410c2177057705da2a9f2cd01dd157493b2a7ac14c8593a16b3dab6b6bfb",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "bcrypt"
                     }
                 },
                 {

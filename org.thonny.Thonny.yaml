@@ -167,8 +167,8 @@ modules:
           type: pypi
           name: semantic_version
       - type: file
-        url: https://files.pythonhosted.org/packages/ed/c6/8effd679eb1cb6d3fd9fc7837cf86c6e4c1ba7a33c3e5e35c741c04016c5/setuptools-rust-1.4.1.tar.gz
-        sha256: 18ff850831f58ee21d5783825c99fad632da21e47645e9427fd7dec048029e76
+        url: https://files.pythonhosted.org/packages/dc/20/0b16eb0dd28c3ec6fccef77230b11e4b9ec94aa7ade1c99b1ab66d237fbe/setuptools-rust-1.5.1.tar.gz
+        sha256: 0e05e456645d59429cb1021370aede73c0760e9360bbfdaaefb5bced530eb9d7
         x-checker-data:
           type: pypi
           name: setuptools-rust
@@ -235,8 +235,8 @@ modules:
   - name: python3-reedsolo
     buildsystem: simple
     build-commands:
-      - pip3 install --install-option="--nocython" --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} "reedsolo" --no-build-isolation
+      - pip3 install --install-option="--nocython" --verbose --exists-action=i --no-index
+        --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "reedsolo" --no-build-isolation
     sources:
       - type: file
         url: https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz
