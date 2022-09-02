@@ -88,11 +88,27 @@ I usually convert these to YAML and place them directly in the Flatpak manifest 
 If you have `org.freedesktop.Sdk//21.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
 The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
 
-#### cryptography
+#### bcrypt and cryptography
 
-The Python cryptography library requires a bit of extra work to update because it uses Rust modules.
-Whenever updating the cryptography library, its Rust dependencies may also need to be updated.
+The Python bcrypt and cryptography libraries require a bit of extra work to update because they use Rust modules.
+Whenever updating the bcrypt and cryptography libraries, their Rust dependencies may also need to be updated.
 The instructions here describe how to do just this.
+
+##### bcrypt
+
+First, clone the bcrypt library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/pyca/bcrypt.git
+    git -C bcrypt pull
+    git -C bcrypt checkout <insert commit here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py bcrypt/src/_bcrypt/Cargo.lock -o bcrypt-cargo-sources.json
+
+This generates a `bcrypt-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building bcrypt.
+
+##### cryptography
 
 First, clone the cryptography library, checking out the particular version to built as part of the Flatpak.
 
@@ -102,6 +118,6 @@ First, clone the cryptography library, checking out the particular version to bu
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
-    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py cryptography/src/rust/Cargo.lock -o cargo-sources.json
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py cryptography/src/rust/Cargo.lock -o cryptography-cargo-sources.json
 
-This generates a `cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building cryptography.
+This generates a `cryptography-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building cryptography.

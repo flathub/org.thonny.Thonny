@@ -205,7 +205,30 @@ modules:
           type: pypi
           name: cryptography
       # The Cargo sources should be updated whenever cryptography is updated.
-      - cargo-sources.json
+      - cryptography-cargo-sources.json
+
+  # The bcrypt Python library is handled specially since it has Rust code and dependencies.
+  # The cryptography Python library is handled specially since it has Rust code and dependencies.
+  - name: python3-bcrypt
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/python3-bcrypt/cargo
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "bcrypt" --no-build-isolation
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/99/f2/b71b9b5b2400fffac7d42c560ac89f302c4d8e328337b2f05f0a4d9e590d/bcrypt-4.0.0.tar.gz
+        sha256: c59c170fc9225faad04dde1ba61d85b413946e8ce2e5f5f5ff30dfd67283f319
+        x-checker-data:
+          name: bcrypt
+          type: pypi
+      # The Cargo sources should be updated whenever bcrypt is updated.
+      - bcrypt-cargo-sources.json
 
   # As of Python 3.10, the native C code compiled as part of the reedsolo package no longer builds.
   # Disable building the native code to avoid a build failure.

@@ -1,6 +1,7 @@
 .idea
 .flatpak-builder/
 *build*/
+bcrypt/
 cryptography/
 cryptography-*/
 flatpak-builder-tools/
