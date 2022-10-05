@@ -95,8 +95,8 @@ modules:
         --prefix=${FLATPAK_DEST} "poetry-core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/27/ba/611a561ef300abdae81a576445334fb7a41e62c295b050338a4f54fa76d4/poetry-core-1.2.0.tar.gz
-        sha256: ceccec95487e46c63a41761fbac5211b809bca22658e25a049f4c7da96269f71
+        url: https://files.pythonhosted.org/packages/bc/87/1729651f2564123b4007dfa14a57f455286184fe6f523584ba0abbdf14d7/poetry-core-1.3.0.tar.gz
+        sha256: 231aa3422a182bbe1bfd1b2b77f5323effa6e7d99f5edcf9f5f0764c75fd3415
         x-checker-data:
           type: pypi
           name: poetry-core
