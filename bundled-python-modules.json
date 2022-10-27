@@ -68,8 +68,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/df/b6/310fe14933403413f7352be0c8e75b7ed23db2170d769ed69e40f40130a3/tomlkit-0.11.5-py3-none-any.whl",
-                    "sha256": "f2ef9da9cef846ee027947dc99a45d6b68a63b0ebc21944649505bf2e8bc5fe7",
+                    "url": "https://files.pythonhosted.org/packages/2b/df/971fa5db3250bb022105d17f340339370f73d502e65e687a94ca1a4c4b1f/tomlkit-0.11.6-py3-none-any.whl",
+                    "sha256": "07de26b0d8cfc18f871aec595fda24d95b08fef89d147caa861939f37230bf4b",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "tomlkit",
