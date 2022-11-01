@@ -205,8 +205,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/2d/1b/fdbdf82b86e07ca90985740ac160a1dd4ab09cb81071ec12d71c701e1138/asttokens-2.0.8-py2.py3-none-any.whl",
-                    "sha256": "e3305297c744ae53ffa032c45dc347286165e4ffce6875dc662b205db0623d86",
+                    "url": "https://files.pythonhosted.org/packages/23/f7/19e20888d0b1e44b40c2795894a05e7be1f631c09949f7e0b177df1ab7a2/asttokens-2.1.0-py2.py3-none-any.whl",
+                    "sha256": "1b28ed85e254b724439afc783d4bee767f780b936c3fe8b3275332f42cf5f561",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "asttokens",
