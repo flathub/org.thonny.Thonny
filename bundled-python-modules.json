@@ -272,8 +272,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b7/f8/e0f61c9ef0f76760400738bd46608b004d858cc016756d0b09d06bb2a30d/bitstring-4.0.0-py3-none-any.whl",
-                    "sha256": "cfa8d0561412c358e9118fd93c7200c4b6e2f253c08a7eb1a01f59d5fc337b66",
+                    "url": "https://files.pythonhosted.org/packages/1b/07/951d7bc9804fcec26e8cdbf1d352018a21c16194d42e3f38cb7f5564ca4b/bitstring-4.0.1-py3-none-any.whl",
+                    "sha256": "4a27cdefd95eb535c4b79e0afcdb5532ba1dba0aaed98a31ad98f46b1e0d5bd9",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bitstring",
