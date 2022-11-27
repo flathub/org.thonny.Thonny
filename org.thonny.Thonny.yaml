@@ -199,8 +199,8 @@ modules:
           type: pypi
           name: cffi
       - type: file
-        url: https://files.pythonhosted.org/packages/13/dd/a9608b7aebe5d2dc0c98a4b2090a6b815628efa46cc1c046b89d8cd25f4c/cryptography-38.0.3.tar.gz
-        sha256: bfbe6ee19615b07a98b1d2287d6a6073f734735b49ee45b11324d85efc4d5cbd
+        url: https://files.pythonhosted.org/packages/e3/3f/41186b1f2fd86a542d399175f6b8e43f82cd4dfa51235a0b030a042b811a/cryptography-38.0.4.tar.gz
+        sha256: 175c1a818b87c9ac80bb7377f5520b7f31b3ef2a0004e2420319beadedb67290
         x-checker-data:
           type: pypi
           name: cryptography
