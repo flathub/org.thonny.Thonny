@@ -239,8 +239,8 @@ modules:
         --find-links="file://${PWD}" --prefix=${FLATPAK_DEST} "reedsolo" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz
-        sha256: b8b25cdc83478ccb06361a0e8fadc27b376a3dfabbb1dc6bb583a998a22c0127
+        url: https://files.pythonhosted.org/packages/ac/44/c686af196f6c1adc7c84e8190259c4974c2e6763898a345b8cbf4c8ac56b/reedsolo-1.5.11.tar.gz
+        sha256: 37c268d9ec86784e2f11d62097b7473c8444ab740c3c127a355f5077460d0097
         x-checker-data:
           name: reedsolo
           type: pypi
