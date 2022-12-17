@@ -108,8 +108,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/b8/5b/f18e227df38b94b4ee30d2502fd531bebac23946a2497e5595067a561274/isort-5.10.1-py3-none-any.whl",
-                    "sha256": "6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7",
+                    "url": "https://files.pythonhosted.org/packages/cd/11/7bf65b28548c7cb626e4a70807cee496361b3c789cce57bd48ce4008d1e4/isort-5.11.3-py3-none-any.whl",
+                    "sha256": "83155ffa936239d986b0f190347a3f2285f42a9b9e1725c89d865b27dd0627e5",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "isort",
