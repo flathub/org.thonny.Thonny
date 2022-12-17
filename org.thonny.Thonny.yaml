@@ -12,6 +12,7 @@ finish-args:
   # Thonny requires access to serial / USB devices for embedded development.
   - --device=all
 
+  - --filesystem=host
   - --share=ipc
   - --share=network
   - --socket=x11
