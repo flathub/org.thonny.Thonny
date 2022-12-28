@@ -88,8 +88,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d4/da/d5c2ca3b83b724853373a2949faf9950aeb33e86b30c84d814fe7ebd88d1/platformdirs-2.6.1-py3-none-any.whl",
-                    "sha256": "69de5933ec873bd7ddae497f004be17cf200bce048dc987c28fc4e347d5349ff",
+                    "url": "https://files.pythonhosted.org/packages/c1/c7/9be9d651b93efce682b45142a6267034fc4215972780748618c02e236361/platformdirs-2.6.2-py3-none-any.whl",
+                    "sha256": "83c8f6d04389165de7c9b6f0c682439697887bca0aa2f1c87ef1826be3584490",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "platformdirs",
