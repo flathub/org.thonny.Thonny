@@ -262,15 +262,6 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/12/e3/c46c274cf466b24e5d44df5d5cd31a31ff23e57f074a2bb30931a8c9b01a/cryptography-39.0.0.tar.gz",
-                    "sha256": "f964c7dcf7802d133e8dbd1565914fa0194f9d683d82411989889ecd701e8adf",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "cryptography"
-                    }
-                },
-                {
-                    "type": "file",
                     "url": "https://files.pythonhosted.org/packages/09/d4/4f05f5d16a4863b30ba96c23b23e942da8889abfa1cdbabf2a0df12a4532/ecdsa-0.18.0-py2.py3-none-any.whl",
                     "sha256": "80600258e7ed2f16b9aa1d7c295bd70194109ad5a30fdee0eaeefef1d4c559dd",
                     "x-checker-data": {
@@ -301,8 +292,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/da/4f/8b88d7b1cb5ddecc46ad186a51e75144ed0119123c0a4b75a14875aff131/reedsolo-1.6.1.tar.gz",
-                    "sha256": "a7ce6b0efad8df491a70b87b6ab3543e751f7700dc4ac0b12081a456ef634f5d",
+                    "url": "https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz",
+                    "sha256": "b8b25cdc83478ccb06361a0e8fadc27b376a3dfabbb1dc6bb583a998a22c0127",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "reedsolo"
@@ -333,15 +324,6 @@
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "cffi"
-                    }
-                },
-                {
-                    "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/12/e3/c46c274cf466b24e5d44df5d5cd31a31ff23e57f074a2bb30931a8c9b01a/cryptography-39.0.0.tar.gz",
-                    "sha256": "f964c7dcf7802d133e8dbd1565914fa0194f9d683d82411989889ecd701e8adf",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "cryptography"
                     }
                 },
                 {
