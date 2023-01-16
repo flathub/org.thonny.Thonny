@@ -243,13 +243,8 @@
             "sources": [
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/1b/07/951d7bc9804fcec26e8cdbf1d352018a21c16194d42e3f38cb7f5564ca4b/bitstring-4.0.1-py3-none-any.whl",
-                    "sha256": "4a27cdefd95eb535c4b79e0afcdb5532ba1dba0aaed98a31ad98f46b1e0d5bd9",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "bitstring",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "url": "https://files.pythonhosted.org/packages/49/fa/ac153ef3c9668a093f33386edf7a20122962e9142b1105fbe2a4a4262785/bitstring-3.1.9-py3-none-any.whl",
+                    "sha256": "0de167daa6a00c9386255a7cac931b45e6e24e0ad7ea64f1f92a64ac23ad4578"
                 },
                 {
                     "type": "file",
