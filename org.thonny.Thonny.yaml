@@ -4,7 +4,7 @@ runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: thonny
+command: thonny.sh
 cleanup:
   - /man
   - /share/man
@@ -12,7 +12,15 @@ finish-args:
   # Thonny requires access to serial / USB devices for embedded development.
   - --device=all
 
-  - --filesystem=host
+  - --filesystem=/media
+  - --filesystem=/run/media
+
+  # todo Remove filesystem=home permissions when it's possible to open directories with the native file chooser dialog.
+  - --filesystem=home
+  # todo Use --persist=.local to isolate Python packages installed to the user installation of the Flatpak from the user installation on the host.
+  # This should be uncommented when removing --filesystem=home.
+  # - --persist=.local
+
   - --share=ipc
   - --share=network
   - --socket=x11
@@ -251,5 +259,12 @@ modules:
         -Dm644 -T packaging/icons/thonny-$size.png ${FLATPAK_DEST}/share/icons/hicolor/$size/apps/${FLATPAK_ID}.png;
         done
       - install -Dm644 packaging/linux/org.thonny.Thonny.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.appdata.xml
+      - install -Dm 755 -t /app/bin/ thonny.sh
     sources:
       - thonny-sources.yaml
+      - type: script
+        dest-filename: thonny.sh
+        commands:
+          # Set PYTHONUSERBASE to be under the ~/.var/app/org.thonny.Thonny/.local directory.
+          - export PYTHONUSERBASE=$(realpath $XDG_DATA_HOME/../.local)
+          - /app/bin/thonny "$@"
