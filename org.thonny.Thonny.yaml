@@ -24,6 +24,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=x11
+  - --system-talk-name=org.freedesktop.UDisks2
 modules:
   # The `tkinter` module is missing from the Freedesktop Sdk's Python installation.
   - name: tkinter
