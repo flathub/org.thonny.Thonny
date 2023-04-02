@@ -287,8 +287,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/1e/a5/67bf4fdd53c1d0a09dc3330ea482d8e58e79f39ea2ccb5a1b89fbb3b7f45/reedsolo-2.0.10.tar.gz",
-                    "sha256": "6ed415f10bc2b71afa402b04a56409dd7abf94608a738f211a9772c2dd19a4e6",
+                    "url": "https://files.pythonhosted.org/packages/57/5b/ead15a5d182553f9d7832851a954b7f0d662d710972b0d1c479fd11a3ebd/reedsolo-2.0.13.tar.gz",
+                    "sha256": "71b4121c6860a55899435c552051a19d5f023c50358be4b1c0fa0c6e2f4ac717",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "reedsolo"
