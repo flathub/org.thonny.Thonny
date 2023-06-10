@@ -8,3 +8,5 @@
       tag-query: .tag_name
       version-query: .tag_name | sub("^v"; "")
       timestamp-query: .published_at
+  - type: patch
+    path: 0001-beta-release-appstream-version-ordering.patch
