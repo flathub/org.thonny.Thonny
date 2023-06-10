@@ -24,6 +24,7 @@ finish-args:
   - --share=ipc
   - --share=network
   - --socket=x11
+  - --system-talk-name=org.freedesktop.UDisks2
 modules:
   # The `tkinter` module is missing from the Freedesktop Sdk's Python installation.
   - name: tkinter
@@ -232,19 +233,6 @@ modules:
         sha256: 27d375903ac8261cfe4047f6709d16f7d18d39b1ec92aaf72af989552a650ebd
       # The Cargo sources should be updated whenever bcrypt is updated.
       - bcrypt-cargo-sources.json
-
-  # As of Python 3.10, the native C code compiled as part of the reedsolo package no longer builds.
-  # Disable building the native code to avoid a build failure.
-  - name: python3-reedsolo
-    buildsystem: simple
-    build-commands:
-      - python3 setup.py bdist_wheel --nocython
-      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
-        --prefix=${FLATPAK_DEST} dist/reedsolo-1.5.4-py3-none-any.whl
-    sources:
-      - type: archive
-        url: https://files.pythonhosted.org/packages/c8/cb/bb2ddbd00c9b4215dd57a2abf7042b0ae222b44522c5eb664a8fd9d786da/reedsolo-1.5.4.tar.gz
-        sha256: b8b25cdc83478ccb06361a0e8fadc27b376a3dfabbb1dc6bb583a998a22c0127
 
   # Python dependencies
   - bundled-python-modules.json
