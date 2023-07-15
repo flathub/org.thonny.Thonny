@@ -94,8 +94,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d8/5d/d38b8cc008c05eb81d7d1e7fd30c5bcb94d3b980f823b0c8de86c2e8fc8d/platformdirs-3.9.0-py3-none-any.whl",
-                    "sha256": "16a642e216f72f16a0bf0026468135d8ffd34a3e17ad0875b030f16f3cba5cbb",
+                    "url": "https://files.pythonhosted.org/packages/6d/a7/47b7088a28c8fe5775eb15281bf44d39facdbe4bc011a95ccb89390c2db9/platformdirs-3.9.1-py3-none-any.whl",
+                    "sha256": "ad8291ae0ae5072f66c16945166cb11c63394c7a3ad1b1bc9828ca3162da8c2f",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "platformdirs",
