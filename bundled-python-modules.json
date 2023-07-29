@@ -105,17 +105,12 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/04/4c/3f7d42a1378c40813772bc5f25184144da09f00ffbe3f60ae985ffa7e10f/pylint-2.17.4-py3-none-any.whl",
-                    "sha256": "7a1145fb08c251bdb5cca11739722ce64a63db479283d10ce718b2460e54123c",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "pylint",
-                        "packagetype": "bdist_wheel"
-                    }
+                    "sha256": "7a1145fb08c251bdb5cca11739722ce64a63db479283d10ce718b2460e54123c"
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/ef/a8/b1c193be753c02e2a94af6e37ee45d3378a74d44fe778c2434a63af92731/tomlkit-0.11.8-py3-none-any.whl",
-                    "sha256": "8c726c4c202bdb148667835f68d68780b9a003a9ec34167b6c673b38eff2a171",
+                    "url": "https://files.pythonhosted.org/packages/a0/6d/808775ed618e51edaa7bbe6759e22e1c7eafe359af6e084700c6d39d3455/tomlkit-0.12.1-py3-none-any.whl",
+                    "sha256": "712cbd236609acc6a3e2e97253dfc52d4c2082982a88f61b640ecf0817eab899",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "tomlkit",
