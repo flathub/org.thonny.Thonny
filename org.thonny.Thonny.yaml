@@ -73,6 +73,18 @@ modules:
               stable-only: true
               url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
 
+  # Add back the Turtle Python module which is stripped out of the org.freedesktop.Sdk.
+  # Be sure to use the turtle module from the same version of Python that's in the org.freedesktop.Sdk.
+  # Update when updating runtime-version.
+  - name: python3-turtle
+    buildsystem: simple
+    build-commands:
+      - install -Dm644 turtle.py ${FLATPAK_DEST}/lib/python3.11/site-packages/turtle.py
+    sources:
+      - type: file
+        url: https://raw.githubusercontent.com/python/cpython/v3.11.6/Lib/turtle.py
+        sha256: 787af385d6d4417aac8b686e8d5f49ce4afd7d1d09bde685bb378ed6ecc4fb7d
+
   # Python dependencies required to build things
   - name: python3-toml
     buildsystem: simple
