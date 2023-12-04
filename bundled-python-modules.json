@@ -222,8 +222,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/47/10/49d7e3b7cbe95ff602f47a5821c1c4bec27b146e5621dc516ca519070ac0/bitarray-2.8.3.tar.gz",
-                    "sha256": "e15587b2bdf18d32eb3ba25f5f5a51bedd0dc06b3112a4c53dab5e7753bc6588",
+                    "url": "https://files.pythonhosted.org/packages/d3/4d/16e0c3731be48696f38c8a1e6db17662f42be92d1cf808c65145bc2ef21c/bitarray-2.8.4.tar.gz",
+                    "sha256": "2c0ba71445ee0932e510f1b0248f53b7a52926f1f78c93b868fcbe6536e61a1d",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bitarray"
