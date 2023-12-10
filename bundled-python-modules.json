@@ -65,8 +65,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/0a/63/4036ae70eea279c63e2304b91ee0ac182f467f24f86394ecfe726092340b/isort-5.12.0-py3-none-any.whl",
-                    "sha256": "f84c2818376e66cf843d497486ea8fed8700b340f308f076c6fb1229dff318b6",
+                    "url": "https://files.pythonhosted.org/packages/ec/1d/4f685e2287dddcebc71624eadfe1fb0b550e39c2a2caa0b90dc47613c6de/isort-5.13.0-py3-none-any.whl",
+                    "sha256": "15e0e937819b350bc256a7ae13bb25f4fe4f8871a0bc335b20c3627dba33f458",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "isort",
@@ -166,8 +166,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/24/21/7d397a4b7934ff4028987914ac1044d3b7d52712f30e2ac7a2ae5bc86dd0/typing_extensions-4.8.0-py3-none-any.whl",
-                    "sha256": "8f92fc8806f9a6b641eaa5318da32b44d401efaac0f6678c9bc448ba3605faa0",
+                    "url": "https://files.pythonhosted.org/packages/b7/f4/6a90020cd2d93349b442bfcb657d0dc91eee65491600b2cb1d388bc98e6b/typing_extensions-4.9.0-py3-none-any.whl",
+                    "sha256": "af72aea155e91adfc61c3ae9e0e342dbc0cba726d6cba4b6c72c1f34e47291cd",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "typing_extensions",
@@ -222,8 +222,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/d3/4d/16e0c3731be48696f38c8a1e6db17662f42be92d1cf808c65145bc2ef21c/bitarray-2.8.4.tar.gz",
-                    "sha256": "2c0ba71445ee0932e510f1b0248f53b7a52926f1f78c93b868fcbe6536e61a1d",
+                    "url": "https://files.pythonhosted.org/packages/2e/7b/31d117a213a0a42a5c5f48bab3e5786b98952d243022d43727f379db0e16/bitarray-2.8.5.tar.gz",
+                    "sha256": "b7564fd218cc4479f7f0106d341e096f78907b47865aeeff702c807df1927c01",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bitarray"
