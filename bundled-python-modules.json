@@ -65,8 +65,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/22/15/3bd09f1fb8bfa9385ecbccbb9aa1c2cce992f4427b1aa852def9e7d81318/isort-5.13.1-py3-none-any.whl",
-                    "sha256": "56a51732c25f94ca96f6721be206dd96a95f42950502eb26c1015d333bc6edb7",
+                    "url": "https://files.pythonhosted.org/packages/d1/b3/8def84f539e7d2289a02f0524b944b15d7c75dab7628bedf1c4f0992029c/isort-5.13.2-py3-none-any.whl",
+                    "sha256": "8ca5e72a8d85860d5a3fa69b8745237f2939afe12dbf656afbcb47fe72d947a6",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "isort",
