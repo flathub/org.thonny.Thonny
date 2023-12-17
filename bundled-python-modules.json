@@ -75,8 +75,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/20/c0/8bab72a73607d186edad50d0168ca85bd2743cfc55560c9d721a94654b20/lazy-object-proxy-1.9.0.tar.gz",
-                    "sha256": "659fb5809fa4629b8a1ac5106f669cfc7bef26fbb389dda53b3e010d1ac4ebae",
+                    "url": "https://files.pythonhosted.org/packages/2c/f0/f02e2d150d581a294efded4020094a371bbab42423fe78625ac18854d89b/lazy-object-proxy-1.10.0.tar.gz",
+                    "sha256": "78247b6d45f43a52ef35c25b5581459e85117225408a4128a3daf8bf9648ac69",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "lazy-object-proxy"
@@ -222,8 +222,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/2e/7b/31d117a213a0a42a5c5f48bab3e5786b98952d243022d43727f379db0e16/bitarray-2.8.5.tar.gz",
-                    "sha256": "b7564fd218cc4479f7f0106d341e096f78907b47865aeeff702c807df1927c01",
+                    "url": "https://files.pythonhosted.org/packages/57/01/a05bf003c538e91f16bd17089389871e4a664c2f6dae32070bc2d4caede1/bitarray-2.9.0.tar.gz",
+                    "sha256": "41f6b46f01bc59abfc38653d203565113b6e7dd04d0ec688774ed28e6d9755db",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "bitarray"
@@ -265,8 +265,8 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://files.pythonhosted.org/packages/a3/63/c757f50b606996a7e676f000b40626f65be63b3a10030563929c968e431c/esptool-4.6.2.tar.gz",
-                    "sha256": "549ef93eef42ee7e9462ce5a53c16df7a0c71d91b3f77e19ec15749804cdf300",
+                    "url": "https://files.pythonhosted.org/packages/1b/8b/f0d1e75879dee053874a4f955ed1e9ad97275485f51cb4bc2cb4e9b24479/esptool-4.7.0.tar.gz",
+                    "sha256": "01454e69e1ef3601215db83ff2cb1fc79ece67d24b0e5d43d451b410447c4893",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "esptool"
