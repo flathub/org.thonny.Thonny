@@ -1,0 +1,61 @@
+From bc3efeae747aeada6e280d23cc3825d7eea83cc2 Mon Sep 17 00:00:00 2001
+From: Jordan Williams <jordan@jwillikers.com>
+Date: Wed, 31 Jan 2024 10:33:35 -0600
+Subject: [PATCH] Update appstream metadata (#3098)
+
+* Add developer_name field
+
+* Define the categories in the desktop file
+
+The appstream metadata will be pulled in from the desktop file.
+https://docs.flathub.org/docs/for-app-authors/appdata-guidelines/#categories-and-keywords
+---
+ packaging/linux/org.thonny.Thonny.appdata.xml | 9 +--------
+ packaging/linux/org.thonny.Thonny.desktop     | 4 ++--
+ 2 files changed, 3 insertions(+), 10 deletions(-)
+
+diff --git a/packaging/linux/org.thonny.Thonny.appdata.xml b/packaging/linux/org.thonny.Thonny.appdata.xml
+index 8f7ff430..1cac4840 100644
+--- a/packaging/linux/org.thonny.Thonny.appdata.xml
++++ b/packaging/linux/org.thonny.Thonny.appdata.xml
+@@ -6,6 +6,7 @@
+   <project_license>MIT</project_license>
+   <name>Thonny</name>
+   <summary>Python IDE for beginners</summary>
++  <developer_name>Aivar Annamaa</developer_name>
+ 
+   <description>
+     <p>Thonny is a simple Python IDE with features useful for learning programming.
+@@ -16,14 +17,6 @@
+     <p>See the homepage for more information, screenshots and a walk-through video.</p>
+   </description>
+   
+-  <categories>
+-    <category>Development</category>
+-    <category>Education</category>
+-    <category>Debugger</category>
+-    <category>IDE</category>
+-    <category>ComputerScience</category>
+-  </categories>
+-  
+   <launchable type="desktop-id">org.thonny.Thonny.desktop</launchable>
+ 
+   <url type="homepage">https://thonny.org</url>
+diff --git a/packaging/linux/org.thonny.Thonny.desktop b/packaging/linux/org.thonny.Thonny.desktop
+index 9e74db43..fa86146e 100644
+--- a/packaging/linux/org.thonny.Thonny.desktop
++++ b/packaging/linux/org.thonny.Thonny.desktop
+@@ -7,8 +7,8 @@ Comment=Python IDE for beginners
+ Icon=thonny
+ StartupWMClass=Thonny
+ Terminal=false
+-Categories=Development;IDE
+-Keywords=programming;education
++Categories=ComputerScience;Debugger;Development;Education;IDE
++Keywords=programming;python
+ MimeType=text/x-python;
+ Actions=Edit;
+ 
+-- 
+2.44.0
+

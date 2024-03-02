@@ -263,6 +263,8 @@ modules:
       - install -Dm 755 -t /app/bin/ thonny.sh
     sources:
       - thonny-sources.yaml
+      - type: patch
+        path: 0001-Update-appstream-metadata-3098.patch
       - type: script
         dest-filename: thonny.sh
         commands:
