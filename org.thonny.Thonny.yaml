@@ -17,9 +17,6 @@ finish-args:
 
   # todo Remove filesystem=home permissions when it's possible to open directories with the native file chooser dialog.
   - --filesystem=home
-  # todo Use --persist=.local to isolate Python packages installed to the user installation of the Flatpak from the user installation on the host.
-  # This should be uncommented when removing --filesystem=home.
-  # - --persist=.local
 
   - --share=ipc
   - --share=network
@@ -270,6 +267,6 @@ modules:
       - type: script
         dest-filename: thonny.sh
         commands:
-          # Set PYTHONUSERBASE to be under the ~/.var/app/org.thonny.Thonny/.local directory.
-          - export PYTHONUSERBASE=$(realpath $XDG_DATA_HOME/../.local)
+          # Set PYTHONUSERBASE to be under the ~/.var/app/org.thonny.Thonny/data directory.
+          - export PYTHONUSERBASE=$XDG_DATA_HOME
           - /app/bin/thonny "$@"
