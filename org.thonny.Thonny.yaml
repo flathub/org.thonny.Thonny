@@ -265,6 +265,8 @@ modules:
       - thonny-sources.yaml
       - type: patch
         path: 0001-Update-appstream-metadata-3098.patch
+      - type: patch
+        path: 0002-Create-venv-and-install-pip-in-venv-as-separate-step.patch
       - type: script
         dest-filename: thonny.sh
         commands:

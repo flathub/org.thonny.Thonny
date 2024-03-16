@@ -1,0 +1,44 @@
+From ad5d9977f3d7daaca79cab9b4f91f0c4f78af12c Mon Sep 17 00:00:00 2001
+From: Jordan Williams <jordan@jwillikers.com>
+Date: Sat, 16 Mar 2024 11:43:26 -0500
+Subject: [PATCH] Create venv and install pip in venv as separate steps
+
+---
+ thonny/plugins/cpython_frontend/cp_front.py | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/thonny/plugins/cpython_frontend/cp_front.py b/thonny/plugins/cpython_frontend/cp_front.py
+index d7d4f0aa..8c8f1b35 100644
+--- a/thonny/plugins/cpython_frontend/cp_front.py
++++ b/thonny/plugins/cpython_frontend/cp_front.py
+@@ -338,7 +338,7 @@ class LocalCPythonConfigurationPage(BackendDetailsConfigPage):
+         path = normpath_with_actual_case(path)
+ 
+         proc = subprocess.Popen(
+-            [running.get_front_interpreter_for_subprocess(), "-m", "venv", path],
++            [running.get_front_interpreter_for_subprocess(), "-m", "venv", "--without-pip", path],
+             stdin=None,
+             stdout=subprocess.PIPE,
+             stderr=subprocess.STDOUT,
+@@ -355,6 +355,18 @@ class LocalCPythonConfigurationPage(BackendDetailsConfigPage):
+             exe_path = os.path.join(path, "bin", "python3")
+ 
+         if os.path.exists(exe_path):
++            proc = subprocess.Popen(
++                [exe_path, "-m", "ensurepip", "--default-pip", "--upgrade"],
++                stdin=None,
++                stdout=subprocess.PIPE,
++                stderr=subprocess.STDOUT,
++                universal_newlines=True,
++            )
++            from thonny.workdlg import SubprocessDialog
++
++            dlg = SubprocessDialog(self, proc, tr("Initializing virtual environment"), autostart=True)
++            ui_utils.show_dialog(dlg)
++
+             self._configuration_variable.set(exe_path)
+ 
+     def should_restart(self):
+-- 
+2.44.0
+
