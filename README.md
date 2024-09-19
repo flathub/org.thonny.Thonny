@@ -68,7 +68,7 @@ First, install the Python dependency `requirements-parser`.
 
 Install the FreeDesktop SDK and Platform.
 
-    flatpak install --user flathub org.freedesktop.Sdk//23.08
+    flatpak install --user flathub org.freedesktop.Sdk//24.08
 
 Clone the `flatpak-builder-tools` repository.
 
@@ -83,9 +83,9 @@ I usually convert these to YAML and place them directly in the Flatpak manifest 
     git clone https://github.com/thonny/thonny.git
     thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
     git -C thonny checkout "$thonny_commit"
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//23.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//24.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
 
-If you have `org.freedesktop.Sdk//23.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
+If you have `org.freedesktop.Sdk//24.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
 The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
 
 #### bcrypt and cryptography
