@@ -31,7 +31,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/iwalton3/tkinter-standalone
-        commit: 20950173c51b7d4b67cfb5d765d41c2600f9bee3
+        commit: 4f5cfe3cdd1f58cd4e136fd66d4e5e27d21d820b
     modules:
       - name: tcl
         buildsystem: autotools
@@ -55,7 +55,7 @@ modules:
         buildsystem: autotools
         subdir: unix
         post-install:
-          - chmod 755 /app/lib/libtk*.so
+          - chmod 755 /app/lib/libtcl*tk*.so
         cleanup:
           - /bin
           - /lib/pkgconfig
