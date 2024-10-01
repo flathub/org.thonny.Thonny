@@ -37,7 +37,7 @@ modules:
         buildsystem: autotools
         subdir: unix
         post-install:
-          - chmod 755 /app/lib/libtcl*.so
+          - chmod +w ${FLATPAK_DEST}/lib/libtcl*.so
         cleanup:
           - /bin
           - /lib/pkgconfig
@@ -57,7 +57,8 @@ modules:
         buildsystem: autotools
         subdir: unix
         post-install:
-          - chmod 755 /app/lib/libtcl*tk*.so
+          # libtcl*tk*.so in Tk 9
+          - chmod +w ${FLATPAK_DEST}/lib/libtk*.so
         cleanup:
           - /bin
           - /lib/pkgconfig
