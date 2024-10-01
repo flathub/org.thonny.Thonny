@@ -69,6 +69,20 @@ modules:
               project-id: 11426
               stable-only: true
               url-template: https://prdownloads.sourceforge.net/tcl/tk$version-src.tar.gz
+      - name: libtommath
+        buildsystem: cmake-ninja
+        cleanup:
+          - /bin
+          - /lib/cmake
+        sources:
+          - type: archive
+            url: https://github.com/libtom/libtommath/releases/download/v1.3.0/ltm-1.3.0.tar.xz
+            sha256: 296272d93435991308eb73607600c034b558807a07e829e751142e65ccfa9d08
+            x-checker-data:
+              type: anitya
+              project-id: 15565
+              stable-only: true
+              url-template: https://github.com/libtom/libtommath/releases/download/v$version/ltm-$version.tar.xz
 
   # Add back the Turtle Python module which is stripped out of the org.freedesktop.Sdk.
   # Be sure to use the turtle module from the same version of Python that's in the org.freedesktop.Sdk.
