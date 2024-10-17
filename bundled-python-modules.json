@@ -223,11 +223,7 @@
                 {
                     "type": "file",
                     "url": "https://files.pythonhosted.org/packages/0d/c7/a85f206e6b2fddb93964efe53685ad8da7d856e6975b005ed6a88f25b010/bitarray-2.9.3.tar.gz",
-                    "sha256": "9eff55cf189b0c37ba97156a00d640eb7392db58a8049be6f26ff2712b93fa89",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "bitarray"
-                    }
+                    "sha256": "9eff55cf189b0c37ba97156a00d640eb7392db58a8049be6f26ff2712b93fa89"
                 },
                 {
                     "type": "file",
