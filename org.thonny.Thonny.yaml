@@ -121,8 +121,8 @@ modules:
         --prefix=${FLATPAK_DEST} "flit_core" --no-build-isolation
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/52/92/89cceb9c49f3e6c72091304636c5ebc2fc48c546742bbf8a6a474e48e666/flit_core-3.10.0.tar.gz
-        sha256: 6d904233178b3c924f665947ac7d286f2ac799fb69087e39e56ceb4084724a97
+        url: https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz
+        sha256: 66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7
         x-checker-data:
           type: pypi
           name: flit_core
@@ -166,8 +166,8 @@ modules:
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl
-        sha256: 5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124
+        url: https://files.pythonhosted.org/packages/88/ef/eb23f262cca3c0c4eb7ab1933c3b1f03d021f2c48f54763065b6f0e321be/packaging-24.2-py3-none-any.whl
+        sha256: 09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759
         x-checker-data:
           name: packaging
           packagetype: bdist_wheel
