@@ -38,6 +38,9 @@ modules:
         subdir: unix
         post-install:
           - chmod +w ${FLATPAK_DEST}/lib/libtcl*.so
+        build-options: &tcl-build-options
+          # Workaround UTF-8 encoding issue in Tcl < 9
+          cflags: -DTCL_UTF_MAX=4
         cleanup:
           - /bin
           - /lib/pkgconfig
@@ -59,6 +62,7 @@ modules:
         post-install:
           # libtcl*tk*.so in Tk 9
           - chmod +w ${FLATPAK_DEST}/lib/libtk*.so
+        build-options: *tcl-build-options
         cleanup:
           - /bin
           - /lib/pkgconfig
