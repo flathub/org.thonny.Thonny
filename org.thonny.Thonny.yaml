@@ -177,8 +177,8 @@ modules:
           packagetype: bdist_wheel
           type: pypi
       - type: file
-        url: https://files.pythonhosted.org/packages/c5/d9/5b72d4b5e274941aee2134ee3cf5e3ae5fff67ba4c6eef7f5bc8d681d2ae/setuptools_scm-8.3.0-py3-none-any.whl
-        sha256: 55582ade381100f30f10473fbb0ca3656a45b0c524bab6f4cfb7e59101148f8c
+        url: https://files.pythonhosted.org/packages/ab/ac/8f96ba9b4cfe3e4ea201f23f4f97165862395e9331a424ed325ae37024a8/setuptools_scm-8.3.1-py3-none-any.whl
+        sha256: 332ca0d43791b818b841213e76b1971b7711a960761c5bea5fc5cdb5196fbce3
         x-checker-data:
           name: setuptools_scm
           packagetype: bdist_wheel
