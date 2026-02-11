@@ -8,5 +8,4 @@
       tag-query: .tag_name
       version-query: .tag_name | sub("^v"; "")
       timestamp-query: .published_at
-      is-important: true
       is-main-source: true
