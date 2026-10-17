@@ -68,7 +68,7 @@ First, install the Python dependency `requirements-parser`.
 
 Install the FreeDesktop SDK and Platform.
 
-    flatpak install --user flathub org.freedesktop.Sdk//24.08
+    flatpak install --user flathub org.freedesktop.Sdk//26.08
 
 Clone the `flatpak-builder-tools` repository.
 
@@ -81,17 +81,14 @@ The following command shows how to retrieve packages from Thonny's `requirements
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
     git clone https://github.com/thonny/thonny.git
-    thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
+    thonny_commit=$(yq -r '.[].commit' thonny-sources.yaml)
     git -C thonny checkout "$thonny_commit"
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//24.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//26.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
 
-If you have `org.freedesktop.Sdk//24.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
-The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
+#### Python libraries with Rust
 
-#### bcrypt and cryptography
-
-The Python bcrypt and cryptography libraries require a bit of extra work to update because they use Rust modules.
-Whenever updating the bcrypt and cryptography libraries, their Rust dependencies may also need to be updated.
+Some Python libraries require a bit of extra work to update because they use Rust modules.
+Whenever updating these libraries, their Rust dependencies may also need to be updated.
 The instructions here describe how to do just this.
 
 ##### bcrypt
@@ -121,3 +118,17 @@ Generate the Rust sources list using the `flatpak-cargo-generator` for the crypt
     python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py cryptography/src/rust/Cargo.lock -o cryptography-cargo-sources.json
 
 This generates a `cryptography-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building cryptography.
+
+##### uv-build
+
+First, clone the uv-build library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/astral-sh/uv.git
+    git -C uv pull
+    git -C uv checkout <insert commit here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the uv-build library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py uv/Cargo.lock -o uv-cargo-sources.json
+
+This generates a `uv-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building uv-build.
