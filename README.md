@@ -50,6 +50,10 @@ Build the Flatpak.
 
     flatpak-builder --user --install --install-deps-from=flathub --force-clean --repo=repo build-dir org.thonny.Thonny.yaml
 
+If there is an error regarding `rofiles-fuse`, then provide the `--disable-rofiles-fuse` to the Flatpak Builder command like so.
+
+    flatpak-builder --user --install --install-deps-from=flathub --force-clean --repo=repo --disable-rofiles-fuse build-dir org.thonny.Thonny.yaml
+
 Run the Flatpak.
 
     flatpak run org.thonny.Thonny
@@ -83,7 +87,7 @@ I usually convert these to YAML and place them directly in the Flatpak manifest 
     git clone https://github.com/thonny/thonny.git
     thonny_commit=$(yq -r '.[].commit' thonny-sources.yaml)
     git -C thonny checkout "$thonny_commit"
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//26.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//26.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules
 
 #### Python libraries with Rust
 
@@ -97,7 +101,7 @@ First, clone the bcrypt library, checking out the particular version to built as
 
     git clone https://github.com/pyca/bcrypt.git
     git -C bcrypt pull
-    git -C bcrypt checkout <insert commit here>
+    git -C bcrypt checkout <insert commit or tag here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
@@ -111,7 +115,7 @@ First, clone the cryptography library, checking out the particular version to bu
 
     git clone https://github.com/pyca/cryptography.git
     git -C cryptography pull
-    git -C cryptography checkout <insert commit here>
+    git -C cryptography checkout <insert commit or tag here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
@@ -125,10 +129,38 @@ First, clone the uv-build library, checking out the particular version to built 
 
     git clone https://github.com/astral-sh/uv.git
     git -C uv pull
-    git -C uv checkout <insert commit here>
+    git -C uv checkout <insert commit or tag here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the uv-build library's Rust crate.
 
     python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py uv/Cargo.lock -o uv-cargo-sources.json
 
 This generates a `uv-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building uv-build.
+
+##### tibs
+
+First, clone the tibs library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/scott-griffiths/tibs.git
+    git -C tibs pull
+    git -C tibs checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the tibs library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py tibs/Cargo.lock -o tibs-cargo-sources.json
+
+This generates a `tibs-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building tibs.
+
+##### maturin
+
+First, clone the maturin library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/PyO3/maturin.git
+    git -C maturin pull
+    git -C maturin checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the maturin library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py maturin/Cargo.lock -o maturin-cargo-sources.json
+
+This generates a `maturin-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building maturin.
