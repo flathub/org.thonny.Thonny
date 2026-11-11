@@ -7,7 +7,9 @@ cryptography-*/
 flatpak-builder-tools/
 flatpak-cargo-generator.py
 flatpak-pip-generator
+maturin/
 *repo*/
 requirements-regular-bundle.txt
 requirements-xxl-bundle.txt
 thonny/
+uv/
