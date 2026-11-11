@@ -1,6 +1,7 @@
 .idea
 .flatpak-builder/
 *build*/
+ast_serialize/
 bcrypt/
 cryptography/
 cryptography-*/

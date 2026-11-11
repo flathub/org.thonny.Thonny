@@ -256,6 +256,28 @@ modules:
       # The Cargo sources should be updated whenever tibs is updated.
       - tibs-cargo-sources.json
 
+  # The ast-serialize Python library is handled specially since it has Rust code and dependencies.
+  - name: python3-ast-serialize
+    build-options:
+      append-path: /usr/lib/sdk/rust-stable/bin
+      env:
+        CARGO_HOME: /run/build/python3-ast-serialize/cargo
+        CARGO_NET_OFFLINE: 'true'
+        RUST_BACKTRACE: '1'
+    buildsystem: simple
+    build-commands:
+      - pip3 install --verbose --exists-action=i --no-index --find-links="file://${PWD}"
+        --prefix=${FLATPAK_DEST} "ast-serialize" --no-build-isolation --no-binary ast-serialize
+    sources:
+      - type: file
+        url: https://files.pythonhosted.org/packages/21/d5/5dc1ee8a80c3b20a0b63c61b43ba6bc53517faecd1def47bcd752d22268e/ast_serialize-0.13.1.tar.gz
+        sha256: 401cc84e8888d4d76f2c8d296fa006ed1a5ff993b6aff90dd777c03973efd025
+        x-checker-data:
+          type: pypi
+          name: ast-serialize
+      # The Cargo sources should be updated whenever ast-serialize is updated.
+      - ast-serialize-cargo-sources.json
+
   # Python dependencies
   - bundled-python-modules.json
 

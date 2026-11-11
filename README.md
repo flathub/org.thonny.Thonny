@@ -164,3 +164,17 @@ Generate the Rust sources list using the `flatpak-cargo-generator` for the matur
     python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py maturin/Cargo.lock -o maturin-cargo-sources.json
 
 This generates a `maturin-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building maturin.
+
+##### ast-serialize
+
+First, clone the ast-serialize library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/mypyc/ast_serialize.git
+    git -C ast_serialize pull
+    git -C ast_serialize checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the ast-serialize library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py ast_serialize/Cargo.lock -o ast-serialize-cargo-sources.json
+
+This generates a `ast-serialize-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building ast-serialize.
