@@ -50,6 +50,10 @@ Build the Flatpak.
 
     flatpak-builder --user --install --install-deps-from=flathub --force-clean --repo=repo build-dir org.thonny.Thonny.yaml
 
+If there is an error regarding `rofiles-fuse`, then provide the `--disable-rofiles-fuse` to the Flatpak Builder command like so.
+
+    flatpak-builder --user --install --install-deps-from=flathub --force-clean --repo=repo --disable-rofiles-fuse build-dir org.thonny.Thonny.yaml
+
 Run the Flatpak.
 
     flatpak run org.thonny.Thonny
@@ -68,7 +72,7 @@ First, install the Python dependency `requirements-parser`.
 
 Install the FreeDesktop SDK and Platform.
 
-    flatpak install --user flathub org.freedesktop.Sdk//24.08
+    flatpak install --user flathub org.freedesktop.Sdk//26.08
 
 Clone the `flatpak-builder-tools` repository.
 
@@ -81,17 +85,15 @@ The following command shows how to retrieve packages from Thonny's `requirements
 I usually convert these to YAML and place them directly in the Flatpak manifest for readability.
 
     git clone https://github.com/thonny/thonny.git
-    thonny_commit = $(yq -r '.[].commit' thonny-sources.yaml)
+    thonny_commit=$(yq -r '.[].commit' thonny-sources.yaml)
+    git -C fetch --tags --prune
     git -C thonny checkout "$thonny_commit"
-    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//24.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules --checker-data
+    python3 flatpak-builder-tools/pip/flatpak-pip-generator --runtime org.freedesktop.Sdk//26.08 -r thonny/packaging/requirements-regular-bundle.txt -o bundled-python-modules
 
-If you have `org.freedesktop.Sdk//24.08` installed in *both* the user and system installations, the Flatpak Pip Generator will choke generating the manifest.
-The best option at the moment is to temporarily remove either the user or the system installation until this issue is fixed upstream.
+#### Python libraries with Rust
 
-#### bcrypt and cryptography
-
-The Python bcrypt and cryptography libraries require a bit of extra work to update because they use Rust modules.
-Whenever updating the bcrypt and cryptography libraries, their Rust dependencies may also need to be updated.
+Some Python libraries require a bit of extra work to update because they use Rust modules.
+Whenever updating these libraries, their Rust dependencies may also need to be updated.
 The instructions here describe how to do just this.
 
 ##### bcrypt
@@ -99,8 +101,8 @@ The instructions here describe how to do just this.
 First, clone the bcrypt library, checking out the particular version to built as part of the Flatpak.
 
     git clone https://github.com/pyca/bcrypt.git
-    git -C bcrypt pull
-    git -C bcrypt checkout <insert commit here>
+    git -C bcrypt fetch --tags --prune
+    git -C bcrypt checkout <insert commit or tag here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
@@ -113,11 +115,67 @@ This generates a `bcrypt-cargo-sources.json` file which is already incorporated 
 First, clone the cryptography library, checking out the particular version to built as part of the Flatpak.
 
     git clone https://github.com/pyca/cryptography.git
-    git -C cryptography pull
-    git -C cryptography checkout <insert commit here>
+    git -C cryptography fetch --tags --prune
+    git -C cryptography checkout <insert commit or tag here>
 
 Generate the Rust sources list using the `flatpak-cargo-generator` for the cryptography library's Rust crate.
 
     python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py cryptography/src/rust/Cargo.lock -o cryptography-cargo-sources.json
 
 This generates a `cryptography-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building cryptography.
+
+##### uv-build
+
+First, clone the uv-build library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/astral-sh/uv.git
+    git -C uv fetch --tags --prune
+    git -C uv checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the uv-build library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py uv/Cargo.lock -o uv-cargo-sources.json
+
+This generates a `uv-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building uv-build.
+
+##### tibs
+
+First, clone the tibs library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/scott-griffiths/tibs.git
+    git -C tibs fetch --tags --prune
+    git -C tibs checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the tibs library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py tibs/Cargo.lock -o tibs-cargo-sources.json
+
+This generates a `tibs-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building tibs.
+
+##### maturin
+
+First, clone the maturin library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/PyO3/maturin.git
+    git -C maturin fetch --tags --prune
+    git -C maturin checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the maturin library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py maturin/Cargo.lock -o maturin-cargo-sources.json
+
+This generates a `maturin-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building maturin.
+
+##### ast-serialize
+
+First, clone the ast-serialize library, checking out the particular version to built as part of the Flatpak.
+
+    git clone https://github.com/mypyc/ast_serialize.git
+    git -C ast_serialize fetch --tags --prune
+    git -C ast_serialize checkout <insert commit or tag here>
+
+Generate the Rust sources list using the `flatpak-cargo-generator` for the ast-serialize library's Rust crate.
+
+    python3 flatpak-builder-tools/cargo/flatpak-cargo-generator.py ast_serialize/Cargo.lock -o ast-serialize-cargo-sources.json
+
+This generates a `ast-serialize-cargo-sources.json` file which is already incorporated into the Flatpak manifest file when building ast-serialize.

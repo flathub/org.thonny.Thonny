@@ -11,9 +11,9 @@ on:
 
 jobs:
   update:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-26.04
     container:
-      image: bilelmoussaoui/flatpak-github-actions:freedesktop-21.08
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-48
       options: --privileged
     steps:
       - name: Configure safe directory for Git
@@ -23,6 +23,7 @@ jobs:
         run: |
           sudo dnf -y install jq python3-pip
           python3 -m pip install requirements-parser
+          python3 -m pip install tomlkit
           python3 -m pip install yq
 
       - uses: actions/checkout@v3
