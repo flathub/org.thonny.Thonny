@@ -171,11 +171,11 @@ modules:
       - '*'
     sources:
       - type: file
-        url: https://files.pythonhosted.org/packages/18/db/8f80e3383a93a72317d06eb4afc89cd111d6ff30d25fd1d65150aba284be/uv_build-0.13.1.tar.gz
-        sha256: ae57a8f25fd5da6bfb33be95d6687db6b3e774a895b78a04dec8d5e2c77fcc95
+        url: https://files.pythonhosted.org/packages/73/a5/916905235227c4f074ec0b125a3f2a5ba1839892e64c9be20200c48bdb5c/uv_build-0.13.7.tar.gz
+        sha256: c561c4fa00f64efd348bdbe3a01ade41bc9af99ba57d807cc7b2abdf73571366
       # The Cargo sources should be updated whenever uv-build is updated.
       - uv-cargo-sources.json
-          
+
   # The cryptography Python library is handled specially since it has Rust code and dependencies.
   - name: python3-cryptography
     build-options:
